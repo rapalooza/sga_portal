@@ -438,7 +438,8 @@ $(document).ready( function() {
                   </div>
                 </div>
               </div>
-              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+              <div class="card__actions">
+                   <button onclick="$('#popup_inner').load('iframe.html');" class="card__action js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in"><svg class="icon icon-reply">
                     <use xlink:href="./img/sprite.svg#icon-reply"></use>
                   </svg></button><button class="card__action"><svg class="icon icon-play-square">
                     <use xlink:href="./img/sprite.svg#icon-play-square"></use>
