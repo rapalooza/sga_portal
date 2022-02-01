@@ -47,8 +47,7 @@ if (viewportmeta) {
   <body>
     <script>
       console.log(localStorage.getItem('darkMode'));
-		document.body.classList.add("dark");
-if (localStorage.getItem('darkMode') === "on") {
+if (localStorage.getItem('darkMode') === "on" || localStorage.getItem('darkMode') === "") {
 		document.body.classList.add("dark");
 		document.addEventListener("DOMContentLoaded", function() {
 		  document.querySelector('.js-switch-theme input').checked = true;
