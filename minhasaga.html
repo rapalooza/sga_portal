@@ -73,12 +73,12 @@ $(document).ready( function() {
           <div class="sidebar__inner">
             <div class="sidebar__group">
               <div class="sidebar__caption caption-sm">Bem vindo <span>email@gmail.com</span></div>
-              <div class="sidebar__menu"><a class="sidebar__item" href="minhasaga.html">
+              <div class="sidebar__menu"><a class="sidebar__item active" href="minhasaga.html">
                   <div class="sidebar__icon"><svg class="icon icon-game-play">
                       <use xlink:href="./img/sprite.svg#icon-game-play"></use>
                     </svg></div>
                   <div class="sidebar__text">Minha Saga</div>
-                </a><a id="novidades" class="sidebar__item active" href="index.html">
+                </a><a id="novidades" class="sidebar__item " href="index.html">
                   <div class="sidebar__icon"><svg class="icon icon-trending">
                       <use xlink:href="./img/sprite.svg#icon-trending"></use>
                     </svg></div>
@@ -344,259 +344,261 @@ $(document).ready( function() {
           </div>
         </div>
         <div id="content">
-          <div class="main main_channel js-main">
-    <div class="main__container">
-        <div class="main__for js-slider js-main-for slick-initialized slick-slider">
-            <div class="slick-list draggable">
-                <div class="slick-track" style="opacity: 1; width: 100vw;">
-                    <div class="main__slide slick-slide slick-current slick-active" data-slick-index="0"
-                        aria-hidden="false"
-                        style="width: 100vw;; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
-                        tabindex="0">
-                        <div class="main__item" style="background-image: url(img/curso-start.jpg);">
-
-                        </div>
-                    </div>
+          <div class="page__center">
+          <div class="page__info h6 color-blue">Turma <i>SDG 7003A</div>
+          <div class="page__title h2">START 5.0</div>
+          
+          <div class="page__row">
+            <div class="page__col">
+              <div class="details details_big">
+                <div class="details__container">
+                  <div class="details__title h6">TECNOLOGIAS IMERSIVAS</div>
+                  <div class="details__row">
+                    <div class="widget widget_center widget_shadow widget_earning">
+                <div class="widget__chart">
+                  <div id="chart-users-blue"></div>
                 </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-<div class="page__center page__center_pt0">
-    <div class="author author_big">
-        <div class="author__container">
-            <div class="author__details">
-
-                <div class="author__wrap">
-                    <div class="page__info h6">Curso</div>
-                    <div class="author__man h2">START <i>5.0</i></div>
-                    <div class="author__parameters" style="margin-top: 20px;">
-                        <div class="presente">Presente</div>
-                        <div class="live">Live</div>
+                <div class="widget__title title">Score do Aluno</div>
+                <div class="widget__counter title title_md color-purple">88<i style="font-size:20px;"> / 100</i></div>
+                <div class="widget__text color-gray">Baseado em seu desempenho acadêmico</div><button class="widget__btn btn btn_purple btn_wide grayed">Emitir Certificado</button>
+              </div>
+                    <div class="details__col">
+                      <div class="details__box">
+                        <div class="details__chart details__chart_counter">
+                          <div id="chart-users-counter"></div>
+                        </div><button class="details__remove"><svg class="icon icon-remove">
+                            <use xlink:href="img/sprite.svg#icon-remove"></use>
+                          </svg></button>
+                      </div>
                     </div>
+                  </div>
+                  <div class="details__list">
+                    <div class="details__item">
+                      <div class="details__head">
+                        <div class="details__preview bg-purple"><img class="details__pic" src="img/folder.svg" alt=""></div>
+                        <div class="details__text caption-sm">Aulas</div>
+                      </div>
+                      <div class="details__counter h3">2<i style="font-size:20px;"> de 6</i></div>
+                      <div class="details__indicator">
+                        <div class="details__progress bg-purple" style="width: 60%;"></div>
+                      </div>
+                    </div>
+                    <div class="details__item">
+                      <div class="details__head">
+                        <div class="details__preview bg-pink"><img class="details__pic" src="img/activity.svg" alt=""></div>
+                        <div class="details__text caption-sm">Exercicios</div>
+                      </div>
+                      <div class="details__counter h3">1<i style="font-size:20px;"> de 4</i></div>
+                      <div class="details__indicator">
+                        <div class="details__progress bg-pink" style="width: 25%;"></div>
+                      </div>
+                    </div>
+                    <div class="details__item">
+                      <div class="details__head">
+                        <div class="details__preview bg-blue"><img class="details__pic" src="img/bag.svg" alt=""></div>
+                        <div class="details__text caption-sm">Modulo</div>
+                      </div>
+                      <div class="details__counter h3">8<i style="font-size:20px;"> de 12</i></div>
+                      <div class="details__indicator">
+                        <div class="details__progress bg-blue" style="width: 75%;"></div>
+                      </div>
+                    </div>
+                    <div class="details__item">
+                      <div class="details__head">
+                        <div class="details__preview bg-orange"><img class="details__pic" src="img/chat.svg" alt=""></div>
+                        <div class="details__text caption-sm">Presença</div>
+                      </div>
+                      <div class="details__counter h3">100<i style="font-size:20px;">%</i></div>
+                      <div class="details__indicator">
+                        <div class="details__progress bg-orange" style="width: 100%;"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="views">
+                <div class="views__head">
+                  <div class="views__title h6">Material de Aulas</div>
+                </div>
+
+                <div class="trending" >
+                <div class="trending__list" >
+               <!-- card -->
+            <div class="card" id="card">
+              <div class="card__inner" >
+                
+                <div class="card__details">
+                  <div class="card__head"> 
+                  </div>
+                  <div class="card__title h6"><i class="color-blue" style="font-size:30px;">01.</i> Tema da primeira aula e logo abaixo um assunto.</div>
+                  <div class="card__status">
+                    <div class="status blue">Breve Descrição sobre oque foi visto durante a aula</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
+                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
+                  </svg></button></div>
             </div>
-            <div class="author__btns" style="justify-content: center;">
-                <button style="width: 100%;min-width: 166px;"class="author__btn btn btn_purple">Assinar</button>
+            <!-- card -->
+            <!-- card -->
+            <div class="card" id="card">
+              <div class="card__inner" >
+                
+                <div class="card__details">
+                  <div class="card__head"> 
+                  </div>
+                  <div class="card__title h6"><i class="color-blue" style="font-size:30px;">02.</i> Tema da primeira aula e logo abaixo um assunto.</div>
+                  <div class="card__status">
+                    <div class="status blue">Breve Descrição sobre oque foi visto durante a aula</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
+                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
+                  </svg></button></div>
+            </div>
+            <!-- card -->
+            <!-- card -->
+            <div class="card class_gray" id="card">
+              <div class="card__inner" >
+                
+                <div class="card__details">
+                  <div class="card__head"> 
+                  </div>
+                  <div class="card__title h6"><i class="color-material-off" style="font-size:30px;">03.</i> Tema da primeira aula e logo abaixo um assunto.</div>
+                  <div class="card__status">
+                    <div class="status blue">Breve Descrição sobre oque foi visto durante a aula</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
+                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
+                  </svg></button></div>
+            </div>
+            <!-- card -->
+            <!-- card -->
+            <div class="card class_gray" id="card">
+              <div class="card__inner" >
+                
+                <div class="card__details">
+                  <div class="card__head"> 
+                  </div>
+                  <div class="card__title h6"><i class="color-material-off" style="font-size:30px;">04.</i> Tema da primeira aula e logo abaixo um assunto.</div>
+                  <div class="card__status">
+                    <div class="status blue">Breve Descrição sobre oque foi visto durante a aula</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
+                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
+                  </svg></button></div>
+            </div>
+            <!-- card -->
+            <!-- card -->
+            <div class="card class_gray" id="card">
+              <div class="card__inner" >
+                
+                <div class="card__details ">
+                  <div class="card__head"> 
+                  </div>
+                  <div class="card__title h6"><i class="color-material-off" style="font-size:30px;">05.</i> Tema da primeira aula e logo abaixo um assunto.</div>
+                  <div class="card__status">
+                    <div class="status blue">Breve Descrição sobre oque foi visto durante a aula</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
+                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
+                  </svg></button></div>
+            </div>
+            <!-- card -->
             
             </div>
-        </div>
-    </div>        <div class="catalog__nav"><a class="catalog__link active" href="#">Sobre</a><a class="catalog__link"
-        href="#">Módulos</a><a class="catalog__link"
-        href="#">Horários</a></div>
 
-    <div class="author author_full">
-        <div class="author__row">
-          <div class="author__col">
-            <div class="author__details">
-              <div class="author__wrap">
-                <div class="author__flex">
-                  <div class="author__box">
-                    <div class="curso__note">
-                        Artes Digitais, Design, Audiovisual, 3D e Interatividade.
-                        Tudo em uma única jornada. O curso Start 5.0 SAGA é um treinamento completo e generalista que leva você ao estudo prático dos softwares mais utilizados do mercado, com o objetivo de evoluir as suas habilidades para a construção de um portfólio e direcionar para uma carreira na área desejada. Aprenda ilustração vetorial, pintura digital, composição de imagens, efeitos visuais, edição e motion graphics para vídeos, além de criar projetos interativos em 3D para realidades virtual e aumentada.</div>
+
+
+
+
+
+
+
+
+
+          </div>
+            </div>
+            </div>
+            <div class="page__col">
+              
+              <div class="widget widget_videos">
+                <div class="widget__title h6">Ultimo Resumo de Aula</div>
+                <div class="widget__slider js-slider-videos">
+                  <div class="widget__slide">
+                    <div class="player player_sm">
+                      <div class="player__container">
+                        <div class="player__view" style="background-image: url(img/bg-player-1.png);">
+                          <div class="player__control">
+                            <div class="player__actions"><button class="player__action"><svg class="icon icon-play">
+                                  <use xlink:href="img/sprite.svg#icon-play"></use>
+                                </svg><svg class="icon icon-pause">
+                                  <use xlink:href="img/sprite.svg#icon-pause"></use>
+                                </svg></button>
+                              <div class="player__volume"><button class="player__action"><svg class="icon icon-sound-off">
+                                    <use xlink:href="img/sprite.svg#icon-sound-off"></use>
+                                  </svg><svg class="icon icon-sound-on">
+                                    <use xlink:href="img/sprite.svg#icon-sound-on"></use>
+                                  </svg></button>
+                                <div class="player__line">
+                                  <div class="player__progress" style="width: 50%;"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="player__actions"><button class="player__action"><svg class="icon icon-settings-fill">
+                                  <use xlink:href="img/sprite.svg#icon-settings-fill"></use>
+                                </svg></button><button class="player__action"><svg class="icon icon-play-window">
+                                  <use xlink:href="img/sprite.svg#icon-play-window"></use>
+                                </svg></button><button class="player__action"><svg class="icon icon-full-screen">
+                                  <use xlink:href="img/sprite.svg#icon-full-screen"></use>
+                                </svg></button></div>
+                          </div>
+                        </div>
+                        <div class="player__body">
+                          <div class="player__info h6">Renegades vs Chiefs - ESL Pro League</div>
+                          <div class="player__parameters">
+              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="widget__parameters">
+                      <div class="widget__group">
+                        <div class="widget__parameter">
+                          <div class="widget__category">Aula</div>
+                          <div class="widget__value">10 </div>
+                        </div>
+                        <div class="widget__parameter">
+                          <div class="widget__category">Software</div>
+                          <div class="widget__value">Photoshop</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                
                 </div>
-                <div class="games"></div>
               </div>
             </div>
           </div>
-          <div class="author__col">
-            <div class="author__group">
-              <div class="author__line">
-                <div class="author__category">Duração</div>
-                <div class="author__value">24 meses</div>
-              </div>
-              <div class="author__line">
-                <div class="author__category">Módulos</div>
-                <div class="author__value">12</div>
-              </div>
-              <div class="author__line">
-                <div class="author__category">Mídia</div>
-                <div class="author__value">Presencial / Live</div>
-              </div>
-              <div class="author__line">
-                <div class="author__category">Competencia</div>
-                <div class="author__value">Arte / Design / Editorial</div>
-              </div>
-              <div class="author__line">
-                <div class="author__category">Lingua</div>
-                <div class="author__value">Portugues</div>
-              </div>
-            </div></div>
         </div>
-      </div>
-<div class="player">
-          <div class="player__wrapper">
-        <div class="player__container">
-          <div class="player__view" style="background-image: url('img/bg-player.png');">
-            <video controls="" style="width:100%;height:100%;object-fit: fill;">
-                <source style="width:120%;height:100%;" type="video/mp4" src="https://www.saga.art.br/wp-content/custom/landing/trash/local-video.mp4">
-                <source type="video/webm" src="http://www.saga.art.br/wp-content/uploads/2020/09/capa-video-playgame5-online.jpg">
-                </video>
-          </div>
-          <div class="player__body">          
-          <div class="presente">Presente</div>
-          <div class="live">Live</div>
-            <div class="player__info h4">Aula 01 Uma introduçao ao mundo das artes digitais!</div>
-            <div class="player__parameters">
-              <div class="player__parameter">
-                <div class="player__icon"><img class="player__pic" src="img/league-of-legends.png" alt=""></div>
-                <div class="player__text">Professor Joano Ferreira </div>
-              </div>
-              <div class="player__parameter">Aulas Iniciais</div>
-            </div>
-          </div>
-        </div>
-        <div class="player__list">
-            <a class="player__preview" href="video-normal.html">  <div class="curplay">Tocando</div>
-            <img class="player__pic" src="http://www.saga.art.br/wp-content/uploads/2020/09/capa-video-playgame5-online.jpg" alt=""></a>
-
-            <div class="player__preview"><img class="player__pic" src="img/player-pic-2.png" alt=""> </div>
-
-          <a class="player__preview" href="video-normal.html">
-            <img class="player__pic locked" src="img/lock_content.png" alt="">  
-            <img class="player__pic" src="img/player-pic-3.png" alt=""></a>
-          
-          <a class="player__preview" href="video-normal.html">
-            <img class="player__pic locked" src="img/lock_content.png" alt="">
-            <img class="player__pic" src="img/player-pic-4.png" alt=""></a>
-          
-        </div>
-        <div class="player__arrows"><button class="player__arrow"><svg class="icon icon-arrow-prev">
-              <use xlink:href="img/sprite.svg#icon-arrow-prev"></use>
-            </svg></button><button class="player__arrow"><svg class="icon icon-arrow-next">
-              <use xlink:href="img/sprite.svg#icon-arrow-next"></use>
-            </svg></button></div>
-      </div>
-</div>
-      <div class="games">
-        <div class="games__head">
-          <div class="games__title h5">Módulos do curso</div>
-          
-        </div>
-        <div class="games__list"><a onclick="$('#popup_inner').load('modulos/arte_vetorial.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Arte-Vetorial.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Arte Vetorial</div>
-              <div class="status orange">Adobe Illustrator</div>
-            </div>
-          </a><a onclick="$('#popup_inner').load('modulos/composicao_de_imagem.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-composicao-de-imagens.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Composição de imagem</div>
-              <div class="status blue">Adobe Photoshop</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-pintura-digital.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Pintura Digital</div>
-              <div class="status blue">Adobe Photoshop</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Efeitos-Visuais-e-Motion-Graphics.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Motion Graphics</div>
-              <div class="status blue">Adobe After Effects</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Edicao-Audiovisual.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Edição Audiovisual</div>
-              <div class="status green">Adobe Premiere</div>
-              <div class="status blue">Adobe Audition</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Cenarios-3D.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">3DI - Cenários 3D</div>
-              <div class="status green">Autodesk Maya</div>
-            </div>
-          </a> 
-           <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Personagens-3D.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">3DII - Personagens 3D</div>
-              <div class="status green">Autodesk Maya</div>
-              <div class="status orange">ZBRUSH</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Animacao-3d.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">3DIII - Animação 3D</div>
-              <div class="status green">Autodesk Maya</div>
-              <div class="status orange">ZBRUSH</div>
-            </div>
-          </a>
-          <a class="games__item" href="#">
-            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Tecnologias-Imersivas.jpg"></div>
-            <div class="games__details">
-              <div class="games__title">Metaverso Imersivo</div>
-              <div class="status green">Spark AR Studio</div>
-              <div class="status orange">Unreal Engine</div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-
-
-    <div class="details__list">
-        <div class="details__item">
-          <div class="details__head">
-            <div class="details__preview bg-purple"><img class="details__pic" src="img/folder.svg" alt=""></div>
-            <div class="details__text caption-sm">Visualizações</div>
-          </div>
-          <div class="details__counter h3">1.5m</div>
-          <div class="details__indicator">
-            <div class="details__progress bg-purple" style="width: 55%;"></div>
-          </div>
-        </div>
-        <div class="details__item">
-          <div class="details__head">
-            <div class="details__preview bg-pink"><img class="details__pic" src="img/activity.svg" alt=""></div>
-            <div class="details__text caption-sm">Alunos</div>
-          </div>
-          <div class="details__counter h3">1m</div>
-          <div class="details__indicator">
-            <div class="details__progress bg-pink" style="width: 52%;"></div>
-          </div>
-        </div>
-        <div class="details__item">
-          <div class="details__head">
-            <div class="details__preview bg-blue"><img class="details__pic" src="img/bag.svg" alt=""></div>
-            <div class="details__text caption-sm">Exercícios</div>
-          </div>
-          <div class="details__counter h3">529k</div>
-          <div class="details__indicator">
-            <div class="details__progress bg-blue" style="width: 55%;"></div>
-          </div>
-        </div>
-        <div class="details__item">
-          <div class="details__head">
-            <div class="details__preview bg-orange"><img class="details__pic" src="img/chat.svg" alt=""></div>
-            <div class="details__text caption-sm">Certificados</div>
-          </div>
-          <div class="details__counter h3">478k</div>
-          <div class="details__indicator">
-            <div class="details__progress bg-orange" style="width: 68%;"></div>
-          </div>
-        </div>
-      </div>
-    
-</div>
-          
-          
-          </div>
-      </div>
+      </div></div>
     </div>
     <div class="popup popup_settings mfp-hide" id="popup-settings">
       <form class="popup__form">
