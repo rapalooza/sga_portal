@@ -348,7 +348,7 @@ $(document).ready( function() {
           <div class="page__info h6 color-gray">Turma <i>SDG 7003A</i></div>
           <div class="page__title h2">START 5.0</div>
           <div class="page__title h2 color-blue" style="margin-top:-25px;
-    line-height: 0.85;">TECNOLOGIAS IMERSIVAS</div>
+    line-height: 1;">TECNOLOGIAS IMERSIVAS</div>
           </div>
           
           <div class="page__row">
@@ -458,9 +458,12 @@ $(document).ready( function() {
                   </div>
                 </div>
               </div>
-              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
+              <div class="card__actions">
+                   <button onclick="$('#popup_inner').load('iframe.html');" class="card__action js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in"><svg class="icon icon-reply">
                     <use xlink:href="./img/sprite.svg#icon-reply"></use>
-                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
+                  </svg></button>
+                  
+                  <button class="card__action"><svg class="icon icon-play-square">
                     <use xlink:href="./img/sprite.svg#icon-play-square"></use>
                   </svg></button></div>
             </div>
