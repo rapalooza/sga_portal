@@ -47,7 +47,8 @@ if (viewportmeta) {
   <body>
     <script>
       console.log(localStorage.getItem('darkMode'));
-if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode')) {
+		document.body.classList.add("dark");
+if (localStorage.getItem('darkMode') === "on") {
 		document.body.classList.add("dark");
 		document.addEventListener("DOMContentLoaded", function() {
 		  document.querySelector('.js-switch-theme input').checked = true;
@@ -479,13 +480,6 @@ $(document).ready( function() {
                   </div>
                 </div>
               </div>
-              <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
-                    <use xlink:href="./img/sprite.svg#icon-reply"></use>
-                  </svg></button><button class="card__action"><svg class="icon icon-play-square">
-                    <use xlink:href="./img/sprite.svg#icon-play-square"></use>
-                  </svg></button><button class="card__action"><svg class="icon icon-heart">
-                    <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                  </svg></button></div>
             </div>
             <!-- card -->
                 <!-- card -->
@@ -514,13 +508,6 @@ $(document).ready( function() {
                         </div>
                       </div>
                     </div>
-                    <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
-                          <use xlink:href="./img/sprite.svg#icon-reply"></use>
-                        </svg></button><button class="card__action"><svg class="icon icon-play-square">
-                          <use xlink:href="./img/sprite.svg#icon-play-square"></use>
-                        </svg></button><button class="card__action"><svg class="icon icon-heart">
-                          <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                        </svg></button></div>
                   </div>
                   <!-- card -->
                         <!-- card -->
@@ -554,13 +541,6 @@ $(document).ready( function() {
                                 
                               </div>
                             </div>
-                            <div class="card__actions"><button class="card__action"><svg class="icon icon-reply">
-                                  <use xlink:href="./img/sprite.svg#icon-reply"></use>
-                                </svg></button><button class="card__action"><svg class="icon icon-play-square">
-                                  <use xlink:href="./img/sprite.svg#icon-play-square"></use>
-                                </svg></button><button class="card__action"><svg class="icon icon-heart">
-                                  <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                                </svg></button></div>
                           </div>
                           <!-- card -->
           </div>
