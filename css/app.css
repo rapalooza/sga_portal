@@ -12089,7 +12089,7 @@ body.dark .views__item:before {
     font-size: 24px;
   }
   .main_channel .main__item {
-    min-height: 580px;
+    min-height: 290px;
     padding-bottom: 180px;
   }
   .main_channel .main__nav {
