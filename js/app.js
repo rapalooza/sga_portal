@@ -348,8 +348,9 @@ $('.games_add .games__item').on('click', function (e) {
 	$(this).toggleClass('active');
 });
 
-$('.player__burger').on('click', function (e) {
-	$(this).parents('.player__playlist').toggleClass('show');
+$('.player__playlist').on('click', function (e) {
+	$(this).toggleClass('show');
+	$(this).find('.player__game .btn_blue ').removeClass('btn_blue');
 });
 
 $('.trending .card__inner').on('click', function (e) {
@@ -404,6 +405,87 @@ $('.trending .card__inner').on('click', function (e) {
 	});
 })();
 
+        
+
+
+(function () {
+	$('.video_popup').magnificPopup({
+		type: 'iframe',
+		fixedContentPos: true,
+		removalDelay: 200,
+		iframe: {
+			markup: '<div class="popup">'+
+					   '<form class="popup__form">'+
+					   '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+					   '<div  id="popup_inner">'+
+					 ' </div></form><button title="Close (Esc)" type="button" class="mfp-close">×</button></div>'
+		 },
+		callbacks: {
+			beforeOpen: function beforeOpen() {
+				this.st.mainClass = this.st.el.attr('data-effect');
+				var sl = $('.js-slider-stories');
+				if (!sl.hasClass('init')) {
+					sl.addClass('init');
+					sl.slick({
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						dots: false,
+						arrows: true,
+						prevArrow: leftArrow,
+						nextArrow: rightArrow,
+						centerMode: true,
+						speed: 700,
+						responsive: [{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 1
+							}
+						}]
+					});
+				}
+			}
+		}
+	});
+})();
+
+(function () {
+	$('.pdf_popup').magnificPopup({
+		type: 'iframe',
+		fixedContentPos: true,
+		removalDelay: 200,
+		iframe: {
+			markup: '<div class="popup popup_settings">'+
+					   '<form class="popup__form">'+
+					   '<div  id="popup_inner"><iframe style="min-height: calc(100vh - 80px); padding: 0px 0px 0px 0px;width: 100%;" class="mfp-iframe main__item" frameborder="0" allowfullscreen></iframe>'+
+					 ' </div></form><button title="Close (Esc)" type="button" class="mfp-close">×</button></div>'
+		 },
+		callbacks: {
+			beforeOpen: function beforeOpen() {
+				this.st.mainClass = this.st.el.attr('data-effect');
+				var sl = $('.js-slider-stories');
+				if (!sl.hasClass('init')) {
+					sl.addClass('init');
+					sl.slick({
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						dots: false,
+						arrows: true,
+						prevArrow: leftArrow,
+						nextArrow: rightArrow,
+						centerMode: true,
+						speed: 700,
+						responsive: [{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 1
+							}
+						}]
+					});
+				}
+			}
+		}
+	});
+})();
 // tabs
 (function () {
 	var tabs = $('.js-tabs');

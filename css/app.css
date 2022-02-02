@@ -1292,6 +1292,15 @@ img {
   background: #4c4c4c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 330 330'%3E%3Cpath fill='%23fff' d='M165,330c63.411,0,115-51.589,115-115c0-29.771-11.373-56.936-30-77.379V85c0-46.869-38.131-85-85-85   S80.001,38.131,80.001,85v52.619C61.373,158.064,50,185.229,50,215C50,278.411,101.589,330,165,330z M180,219.986V240   c0,8.284-6.716,15-15,15s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25   C190,208.162,186.068,215.421,180,219.986z M110.001,85c0-30.327,24.673-55,54.999-55c30.327,0,55,24.673,55,55v29.029   C203.652,105.088,184.91,100,165,100c-19.909,0-38.651,5.088-54.999,14.028V85z'/%3E%3C/svg%3E") no-repeat 20px 50%/22px auto !important;
   opacity: 0.6;
 }
+
+.button_complete {    
+  cursor: default !important;
+  pointer-events: none !important;
+  background-color: #4c4c4c !important;
+  background: #4c4c4c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 330 330'%3E%3Cpath fill='%23fff' d='M165,330c63.411,0,115-51.589,115-115c0-29.771-11.373-56.936-30-77.379V85c0-46.869-38.131-85-85-85   S80.001,38.131,80.001,85v52.619C61.373,158.064,50,185.229,50,215C50,278.411,101.589,330,165,330z M180,219.986V240   c0,8.284-6.716,15-15,15s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25   C190,208.162,186.068,215.421,180,219.986z M110.001,85c0-30.327,24.673-55,54.999-55c30.327,0,55,24.673,55,55v29.029   C203.652,105.088,184.91,100,165,100c-19.909,0-38.651,5.088-54.999,14.028V85z'/%3E%3C/svg%3E") no-repeat 20px 50%/22px auto !important;
+  opacity: 0.6;
+}
+
 .class_gray {    
   color: #000 !important;
   cursor: default !important;
@@ -5359,9 +5368,7 @@ body.dark .games .slick-dots li.slick-active button:before {
 
 .player__wrap {
   position: absolute;
-  top: -32px;
-  right: -24px;
-  width: 420px;
+  width: 100%;
   padding-bottom: 16px;
   border-radius: 20px;
   background: #ffffff;
@@ -5426,9 +5433,10 @@ body.dark .games .slick-dots li.slick-active button:before {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 112px;
+  height: 56px;
   padding: 0 18px;
   border-radius: 16px;
+  gap:2px;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33333;
@@ -5437,6 +5445,36 @@ body.dark .games .slick-dots li.slick-active button:before {
   -o-transition: all .25s;
   transition: all .25s;
 }
+.player__game.locked_content:before {
+  content: "";
+  position: relative;
+  bottom: 0px;
+  display: inline-block;
+  margin-right: 4px;
+  margin-left: -5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4c4c4c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 330 330'%3E%3Cpath fill='%23fff' d='M165,330c63.411,0,115-51.589,115-115c0-29.771-11.373-56.936-30-77.379V85c0-46.869-38.131-85-85-85   S80.001,38.131,80.001,85v52.619C61.373,158.064,50,185.229,50,215C50,278.411,101.589,330,165,330z M180,219.986V240   c0,8.284-6.716,15-15,15s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25   C190,208.162,186.068,215.421,180,219.986z M110.001,85c0-30.327,24.673-55,54.999-55c30.327,0,55,24.673,55,55v29.029   C203.652,105.088,184.91,100,165,100c-19.909,0-38.651,5.088-54.999,14.028V85z'/%3E%3C/svg%3E") no-repeat 5px 50%/13px auto !important;
+}
+.locked_content{
+  cursor:not-allowed;
+  opacity:0.6;
+}
+
+.player__game.confirm:after {
+  content: "";
+  position: relative;
+  bottom: 0px;
+  display: inline-block;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7FBA7A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='7' viewBox='0 0 8 7'%3E%3Cpolygon fill='%23FFF' points='6.8 9 5.2 7.4 4 8.6 6.8 11.4 12 6.2 10.8 5' transform='translate(-4 -5)'/%3E%3C/svg%3E%0A") no-repeat 50% 50%/8px 7px;
+}
+
+
 
 .player__game:hover {
   background: rgba(228, 228, 228, 0.25);
@@ -6091,7 +6129,7 @@ body.dark .player__game {
 }
 
 body.dark .player__game:hover {
-  background: none;
+  background-color: rgba(240, 243, 246, 0.1);
   color: #3F8CFF;
 }
 
@@ -8546,6 +8584,13 @@ body.dark .editor__add:hover:before, body.dark .editor__add:hover:after {
   box-shadow: 0 5px 20px rgba(227, 230, 236, 0.85);
 }
 
+
+.mfp-iframe{
+  width:100%;
+  height:85vh;
+  max-height: 506px;
+
+}
 .popup_settings {
   max-width: 630px;
   margin: 15px auto;
@@ -8553,7 +8598,7 @@ body.dark .editor__add:hover:before, body.dark .editor__add:hover:after {
   border-radius: 24px;
 }
 
-.popup_settings .mfp-close {
+.popup .mfp-close {
   top: 20px;
   right: 32px;
 }
@@ -8715,7 +8760,6 @@ body.dark .mfp-bg {
   display: -ms-flexbox;
   display: flex;
   font-size: 0;
-  margin-left: 30px;
 }
 
 .author__btns .author__btn:not(:last-child) {
@@ -11442,7 +11486,7 @@ body.dark .views__item:before {
     align-items: flex-start;
   }
   .author__btns {
-    margin-left: 132px;
+    margin-top: 10px;
   }
   .author__row {
     display: block;
@@ -11452,7 +11496,7 @@ body.dark .views__item:before {
   }
   .author__col:nth-child(2) {
     width: auto;
-    margin: 32px 0 0 114px;
+    margin: 32px 0 0 0;
   }
   .author__flex {
     display: -webkit-box;
@@ -12262,11 +12306,8 @@ body.dark .views__item:before {
     color: #808191;
   }
   .player__playlist {
-    position: static;
-    margin: 0 20px;
   }
   .player__wrap {
-    top: -20px;
     right: -2px;
     left: -2px;
     width: auto;
