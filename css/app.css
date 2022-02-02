@@ -6124,6 +6124,8 @@ body.dark .player__option:hover {
 
 body.dark .player__wrap {
   background: #242731;
+  -webkit-box-shadow: 0 25px 40px #3f8cff2e;
+  box-shadow: 0 25px 40px #3f8cff2e;
 }
 
 body.dark .player__group::-webkit-scrollbar-thumb:vertical, body.dark .player__group::-webkit-scrollbar-thumb:window-inactive {
@@ -10865,6 +10867,7 @@ body.dark .views__item:before {
   }
   .main_channel .main__item {
     padding-bottom: 150px;
+    min-height: 280px !important;
   }
   .main_channel .main__nav {
     bottom: 136px;

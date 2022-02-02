@@ -350,7 +350,15 @@ $('.games_add .games__item').on('click', function (e) {
 
 $('.player__playlist').on('click', function (e) {
 	$(this).toggleClass('show');
-	$(this).find('.player__game .btn_blue ').removeClass('btn_blue');
+	var totalHeight = 0;
+    $('.player__group').find('.player__game').each(function(){
+	   if($(this).hasClass('btn_blue')){
+		return false;
+	   } else {
+		  totalHeight += $(this).outerHeight();
+	   }
+    });
+	$('.player__group').scrollTop(totalHeight-5);
 });
 
 $('.trending .card__inner').on('click', function (e) {
