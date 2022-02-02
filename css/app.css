@@ -5368,9 +5368,10 @@ body.dark .games .slick-dots li.slick-active button:before {
 
 .player__wrap {
   position: absolute;
+  border-top:4px solid #3f89f8;
   width: 100%;
   padding-bottom: 16px;
-  border-radius: 20px;
+  border-radius: 0px 0px 20px 20px;
   background: #ffffff;
   -webkit-box-shadow: 0 25px 40px rgba(27, 29, 33, 0.3);
   box-shadow: 0 25px 40px rgba(27, 29, 33, 0.3);
