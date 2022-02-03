@@ -5383,6 +5383,7 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__playlist.show .player__wrap {
+  margin-top:5px;
   visibility: visible;
   opacity: 1;
 }
@@ -7121,7 +7122,7 @@ body.dark .game__actions {
 .details__col:first-child {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 170px;
+  width: 60%;
   padding-right: 24px;
 }
 
@@ -7405,7 +7406,7 @@ body.dark .game__actions {
 }
 
 .details_big:not(:last-child) {
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
 .details_big .details__container:before {
@@ -10782,9 +10783,13 @@ body.dark .views__item:before {
     height: 24px !important;
   }
 }
-
+.upload__item {
+  height: 100%;
+  display: block !important;
+}
 @media only screen and (min-width: 1260px) {
   .upload__item {
+    height: 100%;
     display: block !important;
   }
 }
