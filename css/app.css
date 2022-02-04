@@ -2486,9 +2486,11 @@ body.dark .sidebar__bottom {
 .btn_square {
   min-width: 56px;
   padding: 0;
+  font-size: 0;
 }
 
 .btn[href] {
+  display: inline-flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
