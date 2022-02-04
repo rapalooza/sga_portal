@@ -67,7 +67,8 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0;
+  margin-bottom:20px;
 }
 
 .rating {
@@ -162,24 +163,29 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
 #rating-5:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
 
 .feedback {
-  max-width: 360px;
-  width: 100%;
-  padding: 30px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+  max-width: 210px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
+.author__category {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 80px;
+    padding-right: 80px;
+    color: #808191;
 
 </style>
 
 <form class="popup__form" style="padding:40px">
-        <div class="popup__title h6">Sistema de Presença</div>
-        <div style="text-align: center;">
-        <button class="upload__btn btn btn_blue" style="cursor:default;pointer-events: none;">
-          <span class="btn__text">Aula01. Tema da primeira aula e logo abaixo um assunto.</span></button>
-       </div>
+        <div class="popup__title h6" style="display: flex;
+    align-items: center;
+    align-content: center;">  <svg style="margin-right: 5px;zoom:2"class="icon icon-upload">
+                    <use xlink:href="img/sprite.svg#icon-profile-check"></use>
+                  </svg> Sistema de Presença</div>
           <div class="container">
   <div class="feedback">
     <div class="rating">
@@ -281,7 +287,25 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
         </div>
       </div>
     </div>
-  </div>
+  </div><div class="author__col" style="margin: 0px 0 0;">
+            <div class="author__group">
+              <div class="author__line">
+                <div class="author__category">Aula</div>
+                <div class="author__value">02</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Tema</div>
+                 <div class="author__value">Tema atual da aula em questão</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Professor</div>
+                <div class="author__value">Gustavo Pereira </div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Módulo</div>
+                <div class="author__value">Tecnologias Imersivas</div>
+              </div>
+            </div></div>
 </div>
         <div class="popup__user">
           <div class="popup__line">
@@ -297,7 +321,9 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
             <div class="field__label">Conte-nos mais!</div>
             <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
           </div>
-        </div><button class="popup__btn btn btn_purple" type="submit">Enviar Presença</button>
+        </div><button class="popup__btn btn btn_purple" type="submit"><svg style="margin-right: 5px;"class="icon icon-upload">
+                    <use xlink:href="img/sprite.svg#icon-profile-check"></use>
+                  </svg> Enviar Presença</button>
       </form><!-- scripts-->
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/svg4everybody.min.js"></script>
