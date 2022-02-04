@@ -2490,9 +2490,6 @@ body.dark .sidebar__bottom {
 }
 
 .btn[href] {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -8478,6 +8475,7 @@ body.dark .editor__add:hover:before, body.dark .editor__add:hover:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
 
 .popup__ava {
