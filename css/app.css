@@ -1505,7 +1505,7 @@ body.dark .apexcharts-gridlines-horizontal line {
 }
 
 .page__slider {
-  padding: 64px 64px 0;
+  padding: 40px 64px 0;
 }
 
 .page__slider_pt0 {
@@ -1515,7 +1515,7 @@ body.dark .apexcharts-gridlines-horizontal line {
 .page__center {
   max-width: 1344px;
   margin: 0 auto;
-  padding: 64px;
+  padding: 40px 64px;
 }
 
 .page__center_pt0 {
@@ -4243,7 +4243,7 @@ body.dark .field .option.selected {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  padding: 0 95px 0 24px;
+  padding: 0 150px 0 24px;
 }
 
 .card__number {
@@ -4342,8 +4342,8 @@ body.dark .field .option.selected {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  width: 80px;
+  flex-direction: row;
+  width: 140px;
   padding: 8px;
   background: #ff8559;
   border-radius: 24px;
@@ -9134,6 +9134,8 @@ body.dark .author__col:nth-child(2) {
 }
 
 .popular__game.h2.plus {
+  line-height: 300px;
+  align-content: center;
   font-size: 120px;
   color: #e5e5e5;
 }
