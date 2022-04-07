@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Trending</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Unity Dashboard Kit - Gaming">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Unity Dashboard Kit - Gaming">
+    <meta name="twitter:description" content="Ultimate Social Gaming Dashboard Kit">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="https://ui8-unity-gaming.herokuapp.com/img/twitter-card.jpg">
+    <meta property="og:title" content="Unity">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="https://ui8-unity-gaming.herokuapp.com/">
+    <meta property="og:image" content="https://ui8-unity-gaming.herokuapp.com/img/fb-og-image.jpg">
+    <meta property="og:description" content="Ultimate Social Gaming Dashboard Kit">
+    <meta property="og:site_name" content="Unity Dashboard Kit - Gaming">
+    <meta property="fb:admins" content="132951670226590">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    <link href='https://css.gg/css' rel='stylesheet'>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+    <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}</script>
+  </head>
+  <body>
+    <script>
+      console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode')) {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+</script>
+<script>
+$(document).ready( function() {
+    $("#novidades").on("click", function() {
+        $("#content").load("novidades.html");
+    });
+    $("#card").on("click", function() {
+        $("#content").load("curso.html");
+    });
+});
+</script>
+    <div class="page">
+      <div class="sidebar">
+        <div class="sidebar__top"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_black" src="./img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_white" src="./img/logo-white.svg" alt="" /></a><button class="sidebar__burger"></button><button class="sidebar__close"><svg class="icon icon-close">
+              <use xlink:href="./img/sprite.svg#icon-close"></use>
+            </svg></button></div>
+        <div class="sidebar__wrapper">
+          <div class="sidebar__inner">
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm">Bem vindo <span>email@gmail.com</span></div>
+              <div class="sidebar__menu"><a class="sidebar__item" href="minhasaga.html">
+                  <div class="sidebar__icon"><svg class="icon icon-game-play">
+                      <use xlink:href="./img/sprite.svg#icon-game-play"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Minha Saga</div>
+                </a><a id="novidades" class="sidebar__item active" href="index.html">
+                  <div class="sidebar__icon"><svg class="icon icon-trending">
+                      <use xlink:href="./img/sprite.svg#icon-trending"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Novos Cursos</div>
+                  <div class="sidebar__add"><svg class="icon icon-add">
+                      <use xlink:href="./img/sprite.svg#icon-add"></use>
+                    </svg></div>
+                </a><a class="sidebar__item" href="your-videos.html">
+                  <div class="sidebar__icon"><i class="gg-shopping-cart"></i></div>
+                  <div class="sidebar__text">Loja SAGA</div>
+                </a></a><a class="sidebar__item" href="your-videos.html">
+                  <div class="sidebar__icon"><i class="gg-bolt"></i></div>
+                  <div class="sidebar__text">Eventos</div>
+                </a><a class="sidebar__item" href="following.html">
+                  <div class="sidebar__icon"><svg class="icon icon-profile">
+                      <use xlink:href="./img/sprite.svg#icon-profile"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Parceiros</div>
+                </a><a class="sidebar__item" href="playlist.html">
+                  <div class="sidebar__icon"><svg class="icon icon-document">
+                      <use xlink:href="./img/sprite.svg#icon-document"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Atendimento</div>
+                </a></div>
+            </div>
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm">Amigos</div>
+              <div class="sidebar__list"><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-1.png" alt="" /></div>
+                  <div class="sidebar__text">Dylan Hodges</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-2.png" alt="" /></div>
+                  <div class="sidebar__text">Vincent Parks</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-3.png" alt="" /></div>
+                  <div class="sidebar__text">Richard Bowers</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-4.png" alt="" /></div>
+                  <div class="sidebar__text">Isaac Lambert</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-2.png" alt="" /></div>
+                  <div class="sidebar__text">Lillie Nash</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-5.png" alt="" /></div>
+                  <div class="sidebar__text">Edith Cain</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-1.png" alt="" /></div>
+                  <div class="sidebar__text">Jerry Sherman</div>
+                </a></div><a class="sidebar__more" href="#">
+                <div class="sidebar__arrow"><svg class="icon icon-arrow-down">
+                    <use xlink:href="./img/sprite.svg#icon-arrow-down"></use>
+                  </svg></div>
+                <div class="sidebar__text">Load more</div>
+              </a>
+            </div>
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm"><span>Unity </span>Gaming</div>
+              <div class="sidebar__menu"><a class="sidebar__item" href="chat.html">
+                  <div class="sidebar__icon"><svg class="icon icon-chat">
+                      <use xlink:href="./img/sprite.svg#icon-chat"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Chat</div>
+                  <div class="sidebar__counter">20</div>
+                </a><a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+                  <div class="sidebar__icon"><svg class="icon icon-settings">
+                      <use xlink:href="./img/sprite.svg#icon-settings"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Settings</div>
+                </a><a class="sidebar__item" href="channel-analytics.html">
+                  <div class="sidebar__icon"><svg class="icon icon-chart">
+                      <use xlink:href="./img/sprite.svg#icon-chart"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Analytics</div>
+                </a></div>
+            </div>
+          </div>
+          <div class="sidebar__banner">
+            <div class="sidebar__bg" style="background-image: url('./img/sidebar-banner.png');"></div><button class="sidebar__remove"><svg class="icon icon-remove">
+                <use xlink:href="./img/sprite.svg#icon-remove"></use>
+              </svg></button>
+            <div class="sidebar__details">
+              <div class="sidebar__title h5">Join the Unity&nbsp;Gaming</div>
+              <div class="sidebar__info caption-sm">Discover the best livestreams anywhere.</div><button class="sidebar__btn btn btn_purple btn_wide">Join Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-moon">
+                  <use xlink:href="./img/sprite.svg#icon-moon"></use>
+                </svg><svg class="icon icon-sun">
+                  <use xlink:href="./img/sprite.svg#icon-sun"></use>
+                </svg></span></span></label><a class="sidebar__download" href="#"><svg class="icon icon-download">
+              <use xlink:href="./img/sprite.svg#icon-download"></use>
+            </svg></a></div>
+      </div>
+      <div class="page__wrapper">
+        <div class="header"><button class="header__burger"></button>
+          <div class="header__item header__item_browse js-header-item">
+            <div class="header__head js-header-head"><svg class="icon icon-location">
+                <use xlink:href="./img/sprite.svg#icon-location"></use>
+              </svg>Browse<svg class="icon icon-arrow-down">
+                <use xlink:href="./img/sprite.svg#icon-arrow-down"></use>
+              </svg></div>
+            <div class="header__body"><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Popular Categories</div>
+              </a><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Hot Streamers</div>
+              </a><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Trending Videos</div>
+              </a><a class="header__line" href="sign-in.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Sign In</div>
+              </a><a class="header__line" href="sign-up.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Sign Up</div>
+              </a><a class="header__line js-popup-open" href="#popup-stories">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Stories</div>
+              </a></div>
+          </div>
+          <form class="header__search"><input class="header__input" type="text" placeholder="Pesquisar em tudo" /><button class="header__btn-search"><svg class="icon icon-search">
+                <use xlink:href="./img/sprite.svg#icon-search"></use>
+              </svg></button></form>
+          <div class="header__control">
+            <div class="header__item header__item_add js-header-item"><button class="header__head js-header-head"><svg class="icon icon-plus-sm">
+                  <use xlink:href="./img/sprite.svg#icon-plus-sm"></use>
+                </svg></button>
+              <div class="header__body js-header-body"><a class="header__line" href="upload-videos.html">
+                  <div class="header__icon"><svg class="icon icon-camera">
+                      <use xlink:href="./img/sprite.svg#icon-camera"></use>
+                    </svg></div>
+                  <div class="header__text">New Video</div>
+                  <div class="header__icon"><svg class="icon icon-add">
+                      <use xlink:href="./img/sprite.svg#icon-add"></use>
+                    </svg></div>
+                </a><a class="header__line" href="#">
+                  <div class="header__icon"><svg class="icon icon-star">
+                      <use xlink:href="./img/sprite.svg#icon-star"></use>
+                    </svg></div>
+                  <div class="header__text">Go live</div>
+                  <div class="header__icon"><svg class="icon icon-live">
+                      <use xlink:href="./img/sprite.svg#icon-live"></use>
+                    </svg></div>
+                </a></div>
+            </div><a class="header__item header__item_search" href="#"><svg class="icon icon-search">
+                <use xlink:href="./img/sprite.svg#icon-search"></use>
+              </svg></a>
+            <div class="header__item header__item_notifications js-header-item"><button class="header__head js-header-head"><svg class="icon icon-bell">
+                  <use xlink:href="./img/sprite.svg#icon-bell"></use>
+                </svg>
+                <div class="header__counter">2</div>
+              </button>
+              <div class="header__body js-header-body">
+                <div class="notifications">
+                  <div class="notifications__info h6">Recent Notification</div>
+                  <div class="notifications__list"><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-1.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">8h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">The Results Are Beautif</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-2.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Glenn Greer</div>
+                          <div class="notifications__time">12h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-3.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">13h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-4.png" alt="" />
+                        <div class="notifications__status bg-green"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">19h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-2.png" alt="" />
+                        <div class="notifications__status bg-purple"><img class="notifications__pic" src="./img/message.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">21h</div>
+                        </div>
+                        <div class="notifications__text">Sent you a message 📪 </div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-5.png" alt="" />
+                        <div class="notifications__status bg-orange"><img class="notifications__pic" src="./img/heart.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Glenn Greer</div>
+                          <div class="notifications__time">24h</div>
+                        </div>
+                        <div class="notifications__text">Liked <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__item header__item_profile"><a class="header__head" href="#"><img class="header__pic" src="./img/avatar.png" alt="" /></a>
+            <div class="header__body"><a class="header__link" href="#">
+                <div class="header__img"><svg class="icon icon-profile">
+                    <use xlink:href="./img/sprite.svg#icon-profile"></use>
+                  </svg></div>Profile
+              </a><a class="header__link" href="playlist.html">
+                <div class="header__img"><svg class="icon icon-document">
+                    <use xlink:href="./img/sprite.svg#icon-document"></use>
+                  </svg></div>My Playlist
+              </a><a class="header__link" href="channel-profile.html">
+                <div class="header__img"><svg class="icon icon-joystick">
+                    <use xlink:href="./img/sprite.svg#icon-joystick"></use>
+                  </svg></div>My Channel
+              </a><a class="header__link js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+                <div class="header__img"><svg class="icon icon-settings">
+                    <use xlink:href="./img/sprite.svg#icon-settings"></use>
+                  </svg></div>Settings
+              </a><a class="header__link" href="#">
+                <div class="header__img"><svg class="icon icon-logout">
+                    <use xlink:href="./img/sprite.svg#icon-logout"></use>
+                  </svg></div>Log Out
+              </a></div>
+          </div>
+        </div>
+        <div id="content">
+          <div class="main main_channel js-main">
+    <div class="main__container">
+        <div class="main__for js-slider js-main-for slick-initialized slick-slider">
+            <div class="slick-list">
+                <div class="slick-track" style="opacity: 1; width: 100vw;">
+                    <div class="main__slide slick-slide slick-current slick-active" data-slick-index="0"
+                        aria-hidden="false"
+                        style="width: 100vw;; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                        tabindex="0">
+                        <div class="main__item" style="background-image: url(img/curso-start.jpg);">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="page__center page__center_pt0">
+    <div class="author author_big">
+        <div class="author__container">
+            <div class="author__details">
+
+                <div class="author__wrap">
+                    <div class="page__info h6">Flash Class</div>
+                    <div class="author__man h2">Fundamentos Artísticos</div>
+                    <div class="author__parameters" style="margin-top: 20px;">
+                        <div class="recorded">Videos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="author__btns" style="justify-content: center;">
+                <button style="width: 100%;min-width: 166px;"class="author__btn btn btn_purple">Mais Cursos</button>
+            
+            </div>
+        </div>
+    </div>        <div class="catalog__nav"><a class="catalog__link active" href="#">Sobre</a></div>
+
+    <div class="author author_full">
+        <div class="author__row">
+          <div class="author__col">
+            <div class="author__details">
+              <div class="author__wrap">
+                <div class="author__flex">
+                  <div class="author__box">
+                    <div class="curso__note">
+                      Aprenda sobre definições de arte e conheça os fundamentos básicos empregados em desenho, pintura, artes plásticas e peças de comunicação visual que chamam atenção de qualquer espectador. Veja como os elementos: cor, formas, luz, sombra e composição são usados para expressar sentimentos na criação de uma comunicação assertiva</div>
+                  </div>
+                
+                </div>
+                <div class="games"></div>
+              </div>
+            </div>
+          </div>
+          <div class="author__col">
+            <div class="author__group">
+              <div class="author__line">
+                <div class="author__category">Duração</div>
+                <div class="author__value">50min</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Videos</div>
+                <div class="author__value">4</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Mídia</div>
+                <div class="author__value">Videos</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Competencia</div>
+                <div class="author__value">Arte / Design / Editorial</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Lingua</div>
+                <div class="author__value">Portugues</div>
+              </div>
+            </div></div>
+        </div>
+      </div>
+<div class="player">
+          <div class="player__wrapper">
+        <div class="player__container">
+          <div class="player__view" style="background-image: url('img/bg-player.png');">
+            <video controls="" style="width:100%;height:100%;object-fit: fill;">
+                <source style="width:120%;height:100%;" type="video/mp4" src="https://www.saga.art.br/wp-content/custom/landing/trash/local-video.mp4">
+                <source type="video/webm" src="http://www.saga.art.br/wp-content/uploads/2020/09/capa-video-playgame5-online.jpg">
+                </video>
+          </div>
+          <div class="player__body">          
+          <div class="presente">Presente</div>
+          <div class="live">Live</div>
+            <div class="player__info h4">Aula 01 Uma introduçao ao mundo das artes digitais!</div>
+            <div class="player__parameters">
+              <div class="player__parameter">
+                <div class="player__icon"><img class="player__pic" src="img/league-of-legends.png" alt=""></div>
+                <div class="player__text">Professor Joano Ferreira </div>
+              </div>
+              <div class="player__parameter">Aulas Iniciais</div>
+            </div>
+          </div>
+        </div>
+        <div class="player__list">
+            <a class="player__preview" href="video-normal.html">  <div class="curplay">Tocando</div>
+            <img class="player__pic" src="http://www.saga.art.br/wp-content/uploads/2020/09/capa-video-playgame5-online.jpg" alt=""></a>
+
+            <div class="player__preview"><img class="player__pic" src="img/player-pic-2.png" alt=""> </div>
+
+          <a class="player__preview" href="video-normal.html">
+            <img class="player__pic locked" src="img/lock_content.png" alt="">  
+            <img class="player__pic" src="img/player-pic-3.png" alt=""></a>
+          
+          <a class="player__preview" href="video-normal.html">
+            <img class="player__pic locked" src="img/lock_content.png" alt="">
+            <img class="player__pic" src="img/player-pic-4.png" alt=""></a>
+          
+        </div>
+        <div class="player__arrows"><button class="player__arrow"><svg class="icon icon-arrow-prev">
+              <use xlink:href="img/sprite.svg#icon-arrow-prev"></use>
+            </svg></button><button class="player__arrow"><svg class="icon icon-arrow-next">
+              <use xlink:href="img/sprite.svg#icon-arrow-next"></use>
+            </svg></button></div>
+      </div>
+</div>
+      <div class="games">
+        <div class="games__head">
+          <div class="games__title h5">Outras Flash Classes</div>
+          
+        </div>
+        <div class="games__list"><a onclick="$('#popup_inner').load('modulos/arte_vetorial.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Arte-Vetorial.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Arte Vetorial</div>
+              <div class="status orange">Adobe Illustrator</div>
+            </div>
+          </a><a onclick="$('#popup_inner').load('modulos/composicao_de_imagem.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-composicao-de-imagens.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Composição de imagem</div>
+              <div class="status blue">Adobe Photoshop</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-pintura-digital.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Pintura Digital</div>
+              <div class="status blue">Adobe Photoshop</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Efeitos-Visuais-e-Motion-Graphics.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Motion Graphics</div>
+              <div class="status blue">Adobe After Effects</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Edicao-Audiovisual.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Edição Audiovisual</div>
+              <div class="status green">Adobe Premiere</div>
+              <div class="status blue">Adobe Audition</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Cenarios-3D.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DI - Cenários 3D</div>
+              <div class="status green">Autodesk Maya</div>
+            </div>
+          </a> 
+           <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Personagens-3D.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DII - Personagens 3D</div>
+              <div class="status green">Autodesk Maya</div>
+              <div class="status orange">ZBRUSH</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Animacao-3d.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DIII - Animação 3D</div>
+              <div class="status green">Autodesk Maya</div>
+              <div class="status orange">ZBRUSH</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Tecnologias-Imersivas.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Metaverso Imersivo</div>
+              <div class="status green">Spark AR Studio</div>
+              <div class="status orange">Unreal Engine</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+    
+</div>
+          
+          
+          </div>
+      </div>
+    </div>
+    <div class="popup popup_settings mfp-hide" id="popup-settings">
+      <form class="popup__form">
+        <div  id="popup_inner">
+        </div>
+      </form>
+    </div>
+    <div class="popup popup_stories mfp-hide" id="popup-stories">
+      <div class="stories">
+        <div class="stories__container">
+          <div class="stories__slider js-slider-stories">
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- scripts-->
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/svg4everybody.min.js"></script>
+    <script src="./js/lib/slick.min.js"></script>
+    <script src="./js/lib/apexcharts.min.js"></script>
+    <script src="./js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="./js/lib/jquery.nice-select.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/charts.js"></script>
+  </body>
+</html>

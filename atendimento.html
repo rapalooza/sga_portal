@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Trending</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Unity Dashboard Kit - Gaming">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Unity Dashboard Kit - Gaming">
+    <meta name="twitter:description" content="Ultimate Social Gaming Dashboard Kit">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="https://ui8-unity-gaming.herokuapp.com/img/twitter-card.jpg">
+    <meta property="og:title" content="Unity">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="https://ui8-unity-gaming.herokuapp.com/">
+    <meta property="og:image" content="https://ui8-unity-gaming.herokuapp.com/img/fb-og-image.jpg">
+    <meta property="og:description" content="Ultimate Social Gaming Dashboard Kit">
+    <meta property="og:site_name" content="Unity Dashboard Kit - Gaming">
+    <meta property="fb:admins" content="132951670226590">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    <link href='https://css.gg/css' rel='stylesheet'>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+    <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}</script>
+  </head>
+  <body>
+    <script>
+      console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode')) {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+</script>
+<script>
+$(document).ready( function() {
+    $("#novidades").on("click", function() {
+        $("#content").load("novidades.html");
+    });
+    $("#card").on("click", function() {
+        $("#content").load("curso.html");
+    });
+});
+</script>
+    <div class="page">
+      <div class="sidebar">
+        <div class="sidebar__top"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_black" src="./img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_white" src="./img/logo-white.svg" alt="" /></a><button class="sidebar__burger"></button><button class="sidebar__close"><svg class="icon icon-close">
+              <use xlink:href="./img/sprite.svg#icon-close"></use>
+            </svg></button></div>
+        <div class="sidebar__wrapper">
+          <div class="sidebar__inner">
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm">Bem vindo <span>email@gmail.com</span></div>
+              <div class="sidebar__menu"><a class="sidebar__item" href="minhasaga.html">
+                  <div class="sidebar__icon"><svg class="icon icon-game-play">
+                      <use xlink:href="./img/sprite.svg#icon-game-play"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Minha Saga</div>
+                </a><a id="novidades" class="sidebar__item active" href="index.html">
+                  <div class="sidebar__icon"><svg class="icon icon-trending">
+                      <use xlink:href="./img/sprite.svg#icon-trending"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Novos Cursos</div>
+                  <div class="sidebar__add"><svg class="icon icon-add">
+                      <use xlink:href="./img/sprite.svg#icon-add"></use>
+                    </svg></div>
+                </a><a class="sidebar__item" href="your-videos.html">
+                  <div class="sidebar__icon"><i class="gg-shopping-cart"></i></div>
+                  <div class="sidebar__text">Loja SAGA</div>
+                </a></a><a class="sidebar__item" href="your-videos.html">
+                  <div class="sidebar__icon"><i class="gg-bolt"></i></div>
+                  <div class="sidebar__text">Eventos</div>
+                </a><a class="sidebar__item" href="following.html">
+                  <div class="sidebar__icon"><svg class="icon icon-profile">
+                      <use xlink:href="./img/sprite.svg#icon-profile"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Parceiros</div>
+                </a><a class="sidebar__item" href="playlist.html">
+                  <div class="sidebar__icon"><svg class="icon icon-document">
+                      <use xlink:href="./img/sprite.svg#icon-document"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Atendimento</div>
+                </a></div>
+            </div>
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm">Amigos</div>
+              <div class="sidebar__list"><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-1.png" alt="" /></div>
+                  <div class="sidebar__text">Dylan Hodges</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-2.png" alt="" /></div>
+                  <div class="sidebar__text">Vincent Parks</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-3.png" alt="" /></div>
+                  <div class="sidebar__text">Richard Bowers</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-4.png" alt="" /></div>
+                  <div class="sidebar__text">Isaac Lambert</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-2.png" alt="" /></div>
+                  <div class="sidebar__text">Lillie Nash</div>
+                </a><a class="sidebar__item" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-5.png" alt="" /></div>
+                  <div class="sidebar__text">Edith Cain</div>
+                </a><a class="sidebar__item online" href="channel-profile.html">
+                  <div class="sidebar__ava"><img class="sidebar__pic" src="./img/ava-1.png" alt="" /></div>
+                  <div class="sidebar__text">Jerry Sherman</div>
+                </a></div><a class="sidebar__more" href="#">
+                <div class="sidebar__arrow"><svg class="icon icon-arrow-down">
+                    <use xlink:href="./img/sprite.svg#icon-arrow-down"></use>
+                  </svg></div>
+                <div class="sidebar__text">Load more</div>
+              </a>
+            </div>
+            <div class="sidebar__group">
+              <div class="sidebar__caption caption-sm"><span>Unity </span>Gaming</div>
+              <div class="sidebar__menu"><a class="sidebar__item" href="chat.html">
+                  <div class="sidebar__icon"><svg class="icon icon-chat">
+                      <use xlink:href="./img/sprite.svg#icon-chat"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Chat</div>
+                  <div class="sidebar__counter">20</div>
+                </a><a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+                  <div class="sidebar__icon"><svg class="icon icon-settings">
+                      <use xlink:href="./img/sprite.svg#icon-settings"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Settings</div>
+                </a><a class="sidebar__item" href="channel-analytics.html">
+                  <div class="sidebar__icon"><svg class="icon icon-chart">
+                      <use xlink:href="./img/sprite.svg#icon-chart"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Analytics</div>
+                </a></div>
+            </div>
+          </div>
+          <div class="sidebar__banner">
+            <div class="sidebar__bg" style="background-image: url('./img/sidebar-banner.png');"></div><button class="sidebar__remove"><svg class="icon icon-remove">
+                <use xlink:href="./img/sprite.svg#icon-remove"></use>
+              </svg></button>
+            <div class="sidebar__details">
+              <div class="sidebar__title h5">Join the Unity&nbsp;Gaming</div>
+              <div class="sidebar__info caption-sm">Discover the best livestreams anywhere.</div><button class="sidebar__btn btn btn_purple btn_wide">Join Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-moon">
+                  <use xlink:href="./img/sprite.svg#icon-moon"></use>
+                </svg><svg class="icon icon-sun">
+                  <use xlink:href="./img/sprite.svg#icon-sun"></use>
+                </svg></span></span></label><a class="sidebar__download" href="#"><svg class="icon icon-download">
+              <use xlink:href="./img/sprite.svg#icon-download"></use>
+            </svg></a></div>
+      </div>
+      <div class="page__wrapper">
+        <div class="header"><button class="header__burger"></button>
+          <div class="header__item header__item_browse js-header-item">
+            <div class="header__head js-header-head"><svg class="icon icon-location">
+                <use xlink:href="./img/sprite.svg#icon-location"></use>
+              </svg>Browse<svg class="icon icon-arrow-down">
+                <use xlink:href="./img/sprite.svg#icon-arrow-down"></use>
+              </svg></div>
+            <div class="header__body"><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Popular Categories</div>
+              </a><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Hot Streamers</div>
+              </a><a class="header__line" href="browse.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Trending Videos</div>
+              </a><a class="header__line" href="sign-in.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Sign In</div>
+              </a><a class="header__line" href="sign-up.html">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Sign Up</div>
+              </a><a class="header__line js-popup-open" href="#popup-stories">
+                <div class="header__icon"><svg class="icon icon-star">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg></div>
+                <div class="header__text">Stories</div>
+              </a></div>
+          </div>
+          <form class="header__search"><input class="header__input" type="text" placeholder="Pesquisar em tudo" /><button class="header__btn-search"><svg class="icon icon-search">
+                <use xlink:href="./img/sprite.svg#icon-search"></use>
+              </svg></button></form>
+          <div class="header__control">
+            <div class="header__item header__item_add js-header-item"><button class="header__head js-header-head"><svg class="icon icon-plus-sm">
+                  <use xlink:href="./img/sprite.svg#icon-plus-sm"></use>
+                </svg></button>
+              <div class="header__body js-header-body"><a class="header__line" href="upload-videos.html">
+                  <div class="header__icon"><svg class="icon icon-camera">
+                      <use xlink:href="./img/sprite.svg#icon-camera"></use>
+                    </svg></div>
+                  <div class="header__text">New Video</div>
+                  <div class="header__icon"><svg class="icon icon-add">
+                      <use xlink:href="./img/sprite.svg#icon-add"></use>
+                    </svg></div>
+                </a><a class="header__line" href="#">
+                  <div class="header__icon"><svg class="icon icon-star">
+                      <use xlink:href="./img/sprite.svg#icon-star"></use>
+                    </svg></div>
+                  <div class="header__text">Go live</div>
+                  <div class="header__icon"><svg class="icon icon-live">
+                      <use xlink:href="./img/sprite.svg#icon-live"></use>
+                    </svg></div>
+                </a></div>
+            </div><a class="header__item header__item_search" href="#"><svg class="icon icon-search">
+                <use xlink:href="./img/sprite.svg#icon-search"></use>
+              </svg></a>
+            <div class="header__item header__item_notifications js-header-item"><button class="header__head js-header-head"><svg class="icon icon-bell">
+                  <use xlink:href="./img/sprite.svg#icon-bell"></use>
+                </svg>
+                <div class="header__counter">2</div>
+              </button>
+              <div class="header__body js-header-body">
+                <div class="notifications">
+                  <div class="notifications__info h6">Recent Notification</div>
+                  <div class="notifications__list"><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-1.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">8h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">The Results Are Beautif</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-2.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Glenn Greer</div>
+                          <div class="notifications__time">12h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-3.png" alt="" />
+                        <div class="notifications__status bg-blue"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">13h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-4.png" alt="" />
+                        <div class="notifications__status bg-green"><img class="notifications__pic" src="./img/chat.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">19h</div>
+                        </div>
+                        <div class="notifications__text">Commented on <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-2.png" alt="" />
+                        <div class="notifications__status bg-purple"><img class="notifications__pic" src="./img/message.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Sarah Saunders</div>
+                          <div class="notifications__time">21h</div>
+                        </div>
+                        <div class="notifications__text">Sent you a message 📪 </div>
+                      </div>
+                    </a><a class="notifications__item" href="#">
+                      <div class="notifications__ava"><img class="notifications__pic" src="./img/ava-5.png" alt="" />
+                        <div class="notifications__status bg-orange"><img class="notifications__pic" src="./img/heart.svg" alt="" /></div>
+                      </div>
+                      <div class="notifications__details">
+                        <div class="notifications__line">
+                          <div class="notifications__user">Glenn Greer</div>
+                          <div class="notifications__time">24h</div>
+                        </div>
+                        <div class="notifications__text">Liked <span class="notifications__project">Your Latest Video</span></div>
+                      </div>
+                    </a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__item header__item_profile"><a class="header__head" href="#"><img class="header__pic" src="./img/avatar.png" alt="" /></a>
+            <div class="header__body"><a class="header__link" href="#">
+                <div class="header__img"><svg class="icon icon-profile">
+                    <use xlink:href="./img/sprite.svg#icon-profile"></use>
+                  </svg></div>Profile
+              </a><a class="header__link" href="playlist.html">
+                <div class="header__img"><svg class="icon icon-document">
+                    <use xlink:href="./img/sprite.svg#icon-document"></use>
+                  </svg></div>My Playlist
+              </a><a class="header__link" href="channel-profile.html">
+                <div class="header__img"><svg class="icon icon-joystick">
+                    <use xlink:href="./img/sprite.svg#icon-joystick"></use>
+                  </svg></div>My Channel
+              </a><a class="header__link js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+                <div class="header__img"><svg class="icon icon-settings">
+                    <use xlink:href="./img/sprite.svg#icon-settings"></use>
+                  </svg></div>Settings
+              </a><a class="header__link" href="#">
+                <div class="header__img"><svg class="icon icon-logout">
+                    <use xlink:href="./img/sprite.svg#icon-logout"></use>
+                  </svg></div>Log Out
+              </a></div>
+          </div>
+        </div>
+        <div id="content">
+
+          <div class="page__center">
+          <div class="page__info h5">Central de</div>
+          <div class="page__title h2">Atendimento</div>
+
+
+          <div class="details__container">
+          
+            <div class="page__info h5">Status Financeiro</div>
+                  <div class="details__row" style="margin-top:12px">
+                    
+                    <div class="details__col">
+                      <div class="upload__item js-tabs-item">
+                        <div class="upload__wrap upload__wrap_image" style="height:100%;background-image: url('img/modulos/curso-Tecnologias-Imersivas.jpg');">
+                          <div class="upload__box">
+                            <div class="upload__text h6">Terça e quarta</div>
+                            <div class="upload__text h8">18:00</div>
+                            <div class="upload__info h4"><b class="color-purple">01.</b>Tema da primeira aula e logo
+                              abaixo um assunto.</div>
+                           <div class="upload__text" style="display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;">
+                            <button class="upload__btn btn btn_blue grayed">
+                              <svg class="icon icon-upload">
+                                <use xlink:href="img/sprite.svg#icon-upload"></use>
+                              </svg><span class="btn__text">Sala de Aula</span></button>
+                              <button class="author__btn btn btn_blue btn_square pdf_popup" href="presenca.html" data-effect="mfp-zoom-in"><svg class="icon icon-profile-check">
+                    <use xlink:href="img/sprite.svg#icon-profile-check"></use>
+                  </svg></button>
+                </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div><div class="widget widget_center widget_shadow widget_earning">
+                      <div class="widget__chart" style="position: relative;">
+                        <div id="chart-users-blue" style="min-height: 115px;"><div id="apexcharts5c7rs0fg" class="apexcharts-canvas apexcharts5c7rs0fg apexcharts-theme-light" style="width: 130px; height: 115px;"><svg id="SvgjsSvg1001" width="130" height="115" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1003" class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0)"><defs id="SvgjsDefs1002"><linearGradient id="SvgjsLinearGradient1006" x1="0" y1="0" x2="0" y2="1"><stop id="SvgjsStop1007" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop><stop id="SvgjsStop1008" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop><stop id="SvgjsStop1009" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop></linearGradient><clipPath id="gridRectMask5c7rs0fg"><rect id="SvgjsRect1011" width="134" height="115" x="-2" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="gridRectMarkerMask5c7rs0fg"><rect id="SvgjsRect1012" width="134" height="119" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><rect id="SvgjsRect1010" width="20.8" height="115" x="28.6" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke-dasharray="3" fill="url(#SvgjsLinearGradient1006)" class="apexcharts-xcrosshairs" y2="115" filter="none" fill-opacity="0.9" x1="28.6" x2="28.6"></rect><g id="SvgjsG1022" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1023" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"></g></g><g id="SvgjsG1025" class="apexcharts-grid"><g id="SvgjsG1026" class="apexcharts-gridlines-horizontal" style="display: none;"></g><g id="SvgjsG1027" class="apexcharts-gridlines-vertical" style="display: none;"><line id="SvgjsLine1028" x1="0" y1="0" x2="0" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line><line id="SvgjsLine1029" x1="26" y1="0" x2="26" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line><line id="SvgjsLine1030" x1="52" y1="0" x2="52" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line><line id="SvgjsLine1031" x1="78" y1="0" x2="78" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line><line id="SvgjsLine1032" x1="104" y1="0" x2="104" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line><line id="SvgjsLine1033" x1="130" y1="0" x2="130" y2="115" stroke="#e4e4e4" stroke-dasharray="0" class="apexcharts-gridline"></line></g><line id="SvgjsLine1035" x1="0" y1="115" x2="130" y2="115" stroke="transparent" stroke-dasharray="0"></line><line id="SvgjsLine1034" x1="0" y1="1" x2="0" y2="115" stroke="transparent" stroke-dasharray="0"></line></g><g id="SvgjsG1014" class="apexcharts-bar-series apexcharts-plot-series"><g id="SvgjsG1015" class="apexcharts-series" rel="1" seriesName="" data:realIndex="0"><path id="SvgjsPath1017" d="M2.5999999999999996 115L2.5999999999999996 64.6875L23.4 64.6875L23.4 64.6875L23.4 115L23.4 115C23.4 115 2.5999999999999996 115 2.5999999999999996 115 " fill="rgba(160,215,231,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="square" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask5c7rs0fg)" pathTo="M 2.5999999999999996 115L 2.5999999999999996 64.6875L 23.4 64.6875L 23.4 64.6875L 23.4 115L 23.4 115z" pathFrom="M 2.5999999999999996 115L 2.5999999999999996 115L 23.4 115L 23.4 115L 23.4 115L 2.5999999999999996 115" cy="64.6875" cx="28.6" j="0" val="35" barHeight="50.3125" barWidth="20.8"></path><path id="SvgjsPath1018" d="M28.6 115L28.6 20.125L49.400000000000006 20.125L49.400000000000006 20.125L49.400000000000006 115L49.400000000000006 115C49.400000000000006 115 28.6 115 28.6 115 " fill="rgba(160,215,231,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="square" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask5c7rs0fg)" pathTo="M 28.6 115L 28.6 20.125L 49.400000000000006 20.125L 49.400000000000006 20.125L 49.400000000000006 115L 49.400000000000006 115z" pathFrom="M 28.6 115L 28.6 115L 49.400000000000006 115L 49.400000000000006 115L 49.400000000000006 115L 28.6 115" cy="20.125" cx="54.6" j="1" val="66" barHeight="94.875" barWidth="20.8"></path><path id="SvgjsPath1019" d="M54.6 115L54.6 66.125L75.4 66.125L75.4 66.125L75.4 115L75.4 115C75.4 115 54.6 115 54.6 115 " fill="rgba(160,215,231,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="square" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask5c7rs0fg)" pathTo="M 54.6 115L 54.6 66.125L 75.4 66.125L 75.4 66.125L 75.4 115L 75.4 115z" pathFrom="M 54.6 115L 54.6 115L 75.4 115L 75.4 115L 75.4 115L 54.6 115" cy="66.125" cx="80.6" j="2" val="34" barHeight="48.875" barWidth="20.8"></path><path id="SvgjsPath1020" d="M80.6 115L80.6 34.5L101.39999999999999 34.5L101.39999999999999 34.5L101.39999999999999 115L101.39999999999999 115C101.39999999999999 115 80.6 115 80.6 115 " fill="rgba(160,215,231,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="square" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask5c7rs0fg)" pathTo="M 80.6 115L 80.6 34.5L 101.39999999999999 34.5L 101.39999999999999 34.5L 101.39999999999999 115L 101.39999999999999 115z" pathFrom="M 80.6 115L 80.6 115L 101.39999999999999 115L 101.39999999999999 115L 101.39999999999999 115L 80.6 115" cy="34.5" cx="106.6" j="3" val="56" barHeight="80.5" barWidth="20.8"></path><path id="SvgjsPath1021" d="M106.6 115L106.6 89.125L127.39999999999999 89.125L127.39999999999999 89.125L127.39999999999999 115L127.39999999999999 115C127.39999999999999 115 106.6 115 106.6 115 " fill="rgba(160,215,231,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="square" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask5c7rs0fg)" pathTo="M 106.6 115L 106.6 89.125L 127.39999999999999 89.125L 127.39999999999999 89.125L 127.39999999999999 115L 127.39999999999999 115z" pathFrom="M 106.6 115L 106.6 115L 127.39999999999999 115L 127.39999999999999 115L 127.39999999999999 115L 106.6 115" cy="89.125" cx="132.6" j="4" val="18" barHeight="25.875" barWidth="20.8"></path></g><g id="SvgjsG1016" class="apexcharts-datalabels" data:realIndex="0"></g></g><line id="SvgjsLine1036" x1="0" y1="0" x2="130" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1037" x1="0" y1="0" x2="130" y2="0" stroke-dasharray="0" stroke-width="0" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1038" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1039" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1040" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1024" class="apexcharts-yaxis" rel="0" transform="translate(-18, 0)"></g><g id="SvgjsG1004" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div><div class="apexcharts-tooltip apexcharts-theme-light" style="left: 45px; top: -34.1094px;"><div class="apexcharts-tooltip-title" style="font-family: Inter, sans-serif; font-size: 12px;">Feb</div><div class="apexcharts-tooltip-series-group apexcharts-active" style="display: flex;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(160, 215, 231);"></span><div class="apexcharts-tooltip-text" style="font-family: Inter, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-label"></span><span class="apexcharts-tooltip-text-value">66</span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div></div></div>
+                      <div class="resize-triggers"><div class="expand-trigger"><div style="width: 131px; height: 116px;"></div></div><div class="contract-trigger"></div></div></div>
+                      <div class="widget__title title">Score do Aluno</div>
+                      <div class="widget__counter title title_md color-purple">88<i style="font-size:20px;"> / 100</i>
+                      </div>
+                      <div class="widget__text color-gray">Baseado em seu desempenho acadêmico no módulo.</div><button class="widget__btn btn btn_purple btn_wide button_locked">Certificado</button>
+                    </div>
+                  </div>
+                  
+                </div>
+                <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="details details_big">
+                <div class="details__container">
+            <div class="page__info h5">Chamadas</div>
+            <div class="views">
+   
+                <div class="views__caption">
+                  <div class="views__cell">Chamada</div>
+                  <div class="views__cell">Descrição</div>
+                  <div class="views__cell">Abertura</div>
+                  <div class="views__cell">Status</div>
+                </div>
+                <div class="views__list">
+                  <div class="views__item">
+                    <div class="views__details">
+                      <div class="views__cell" style="color:#ff8559">1443 </div>
+                  <div class="views__cell h6">Acadêmico Algo para Resolver</div>
+                  <div class="views__cell status blue">24/03/2022 09:36</div>
+                  <div class="views__cell status green">ABERTO</div>
+                    </div>
+                  </div>
+                  <div class="views__item">
+                    <div class="views__details">
+                      <div class="views__cell" style="color:#ff8559">1443 </div>
+                  <div class="views__cell h6">Financeiro algo para resolver</div>
+                  <div class="views__cell status blue">24/03/2022 09:36</div>
+                  <div class="views__cell status green">ABERTO</div>
+                    </div>
+                  </div>
+           
+                </div>
+               
+              </div>
+        
+            <button class="trending__btn btn btn_gray btn_wide">Abrir Chamada</button>
+          </div></div>
+
+
+      </div>
+    </div>
+    <div class="popup popup_settings mfp-hide" id="popup-settings">
+      <form class="popup__form">
+        <div  id="popup_inner">
+        </div>
+      </form>
+    </div>
+    <div class="popup popup_stories mfp-hide" id="popup-stories">
+      <div class="stories">
+        <div class="stories__container">
+          <div class="stories__slider js-slider-stories">
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+            <div class="stories__slide">
+              <div class="stories__item" style="background-image: url('./img/stories-pic.png');">
+                <div class="stories__progress">
+                  <div class="stories__line active"></div>
+                  <div class="stories__line"></div>
+                </div><a class="stories__user" href="#">
+                  <div class="stories__ava"><img class="stories__pic" src="./img/ava-1.png" alt=""></div>
+                  <div class="stories__desc">
+                    <div class="stories__man confirm">Tran Mau Tri Tam </div>
+                    <div class="stories__game">Call of Duty</div>
+                    <div class="status orange">2.8K viewers</div>
+                  </div>
+                </a>
+                <form class="stories__form"><input class="stories__input" type="text" placeholder="Send a message…"><button class="stories__btn btn btn_purple">Send</button><button class="stories__smile"><svg class="icon icon-editor-smile">
+                      <use xlink:href="./img/sprite.svg#icon-editor-smile"></use>
+                    </svg></button></form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- scripts-->
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/svg4everybody.min.js"></script>
+    <script src="./js/lib/slick.min.js"></script>
+    <script src="./js/lib/apexcharts.min.js"></script>
+    <script src="./js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="./js/lib/jquery.nice-select.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/charts.js"></script>
+  </body>
+</html>
