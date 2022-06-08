@@ -6808,9 +6808,9 @@ body.dark .upload__line {
 
 .catalog__list .game {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 calc(25% - 32px);
-  flex: 0 0 calc(25% - 32px);
-  width: calc(25% - 32px);
+    -ms-flex: 0 0 calc(33.333% - 32px);
+    flex: 0 0 calc(33.333% - 32px);
+    width: calc(33.333% - 32px);
   margin: 40px 16px 0;
 }
 
