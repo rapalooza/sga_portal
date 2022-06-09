@@ -5692,14 +5692,11 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__wrapper {
-  box-shadow: 0px 0px 15px 0px var(--blue) ,0px 0px 0px 5px var(--blue);
   width:100%;
-  border-radius: 32px;
   overflow:hidden;
-  gap:2px;
+  gap:12px;
   display:flex;
   position: relative;
-  border-radius: 32px;
   margin-bottom:30px;
 }
 
@@ -5761,7 +5758,12 @@ body.dark .games .slick-dots li.slick-active button:before {
 
 .player__container {
   width: 100%;
-  height:auto;
+  border-radius:32px;
+  overflow:hidden;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 .player__container:before {
@@ -5888,7 +5890,6 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__chat {
-  display: none;
   position: absolute;
   top: 24px;
   right: 16px;
@@ -5992,8 +5993,12 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__body {
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: space-between;
   height:100%;
-  padding: 20px 32px 90px;
+  padding: 20px 32px 32px;
   background: #ffffff;
 }
 
@@ -6147,11 +6152,12 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__btns {
-  position: absolute;
+  gap: 5%;
   bottom: 15px;
   display: flex;
   padding-top: 20px;
   border-top: 1px solid #E3E3E3;
+  justify-content: center;
 }
 
 .player__btns .player__btn.btn_gray {
@@ -6176,7 +6182,7 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__btns .player__btn:not(:first-child) {
-  margin-left: 8px;
+
 }
 
 .player:not(:last-child) {
@@ -9353,10 +9359,12 @@ body.dark .popular__item body.dark .popular__btn {
 }
 
 .messenger {
+  
+  border-radius:32px;
+  overflow:hidden;
   margin-right: 0%;
   width: 50%;
   background: #ffffff;
-  border: 1px solid #E3E3E3;
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
@@ -9377,7 +9385,7 @@ body.dark .popular__item body.dark .popular__btn {
   -ms-flex-align: center;
   align-items: center;
   height: 64px;
-  padding: 0 12px;
+  padding: 0 30px;
 }
 
 .messenger__full {
@@ -11328,10 +11336,7 @@ body.dark .views__item:before {
 
 @media only screen and (max-width: 1259px) {
   .messenger__foot {
-    position: absolute;
-    left: -198%;
-    /* bottom: 7px; */
-    right: 12px;
+
   }
   .mfh_hide {
     bottom:-100px;
@@ -12636,7 +12641,8 @@ body.dark .views__item:before {
   }
   .player__body {
     margin: 0;
-    padding: 32px 24px 130px;
+    padding: 32px 24px 24px;
+    min-height: 250px;
   }
   .player__info {
     font-size: 18px;
@@ -12670,7 +12676,7 @@ body.dark .views__item:before {
     display: none;
   }
   .player__btns .player__btn:not(:first-child) {
-    margin-left: auto;
+
   }
   .player_sm .player__view {
     height: 220px;
@@ -13162,30 +13168,35 @@ body.dark .views__item:before {
     background: #E3E3E3;
   }
   .messenger {
-    width:100%;
-    margin-top: -270px;
+    z-index: 99;
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
   }
   .messenger__head {
-    height: 32px;
-    padding: 0 12px;
+    height: 64px;
+    padding: 0 24px;
   }
   .messenger__close {
     width: 40px;
     height: 40px;
   }
   .messenger__body {
-    height:300px;
+    height:calc(100% - 64px);
   }
   .player__wrapper {
     display:flex;
     flex-direction: column;
-    min-height: 450px;
+    min-height: fit-content;
   }
   .messenger__list{
-    height:300px;
   }
   .messenger_hide {
-    margin-top:-400%;
+    transform: scale(0.8);
+    visibility: hidden;
+    opacity: 0;
   }
   .messenger__body:before {
     bottom: 70px;

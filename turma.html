@@ -59,7 +59,7 @@
   <script>
     $(document).ready(function () {
       $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
-      $("#chat_toggle").on("click", function() {
+      $(".chat_toggle").on("click", function() {
     $( "#messenger" ).toggleClass( "messenger_hide" );
     $( "#messenger__foot" ).toggleClass( "mfh_hide" );
   });
@@ -432,7 +432,7 @@
                           <use xlink:href="img/sprite.svg#icon-play"></use>
                         </svg><svg class="icon icon-pause">
                           <use xlink:href="img/sprite.svg#icon-pause"></use>
-                        </svg></button><button class="player__chat"><svg class="icon icon-chat">
+                        </svg></button><button class="chat_toggle player__chat"><svg class="icon icon-chat">
                           <use xlink:href="img/sprite.svg#icon-chat"></use>
                         </svg></button>
                       <div class="player__control">
@@ -456,7 +456,7 @@
                               <use xlink:href="img/sprite.svg#icon-settings-fill"></use>
                             </svg></button><button class="player__action"><svg class="icon icon-play-window">
                               <use xlink:href="img/sprite.svg#icon-play-window"></use>
-                            </svg></button><button id="chat_toggle" class="player__action"><svg class="icon icon-full-screen">
+                            </svg></button><button class="player__action"><svg class="icon icon-full-screen">
                               <use xlink:href="img/sprite.svg#icon-full-screen"></use>
                             </svg></button></div>
                       </div>
@@ -499,6 +499,7 @@
                   <div id="messenger" class="messenger show">
                     <div class="messenger__head">
                       <div class="messenger__title h6 mr-auto">Chat da turma</div>
+                      <button class="chat_toggle messenger__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
                     </div>
                     <div  class="messenger__body">
                       <div id="messenger_body" class="messenger__list">
