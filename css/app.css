@@ -11327,6 +11327,15 @@ body.dark .views__item:before {
 }
 
 @media only screen and (max-width: 1259px) {
+  .messenger__foot {
+    position: absolute;
+    left: -198%;
+    /* bottom: 7px; */
+    right: 12px;
+  }
+  .mfh_hide {
+    bottom:-100px;
+  }
   .header__item_browse {
     width: 130px;
     margin-right: 40px;

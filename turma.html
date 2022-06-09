@@ -61,6 +61,7 @@
       $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
       $("#chat_toggle").on("click", function() {
     $( "#messenger" ).toggleClass( "messenger_hide" );
+    $( "#messenger__foot" ).toggleClass( "mfh_hide" );
   });
 
       $("#novidades").on("click", function () {
@@ -662,7 +663,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="messenger__foot"><input class="messenger__input" type="text"
+                      <div id="messenger__foot" class="messenger__foot"><input class="messenger__input" type="text"
                           placeholder="Mensagem..."><button
                           class="messenger__btn btn btn_purple">></button><button class="messenger__smile"><svg
                             class="icon icon-editor-smile">
