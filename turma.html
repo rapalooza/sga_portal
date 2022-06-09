@@ -58,6 +58,11 @@
   </script>
   <script>
     $(document).ready(function () {
+      if ( screen.width < 1259 ){
+        
+    $( "#messenger" ).removeClass( "show" );
+    $( "#messenger" ).addClass( "messenger_hide" );
+      }
       $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
       $(".chat_toggle").on("click", function() {
     $( "#messenger" ).toggleClass( "messenger_hide" );
@@ -427,13 +432,16 @@
           <div class="player__wrapper">
                   <div class="player__container">
                     <div class="player__view" style="background-image: url('img/bg-player.png');">
-                      <div class="player__counter">24K Watching</div><button class="player__toggle"><svg
+                      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/__4Kwp6nOjo?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute;/* z-index: 99; */top: 0px;"></iframe>
+                      <div class="player__counter">24K Watching</div>
+                      <button class="chat_toggle player__chat"><svg class="icon icon-chat">
+                          <use xlink:href="img/sprite.svg#icon-chat"></use>
+                        </svg></button>
+                     <!-- <button class="player__toggle"><svg
                           class="icon icon-play">
                           <use xlink:href="img/sprite.svg#icon-play"></use>
                         </svg><svg class="icon icon-pause">
                           <use xlink:href="img/sprite.svg#icon-pause"></use>
-                        </svg></button><button class="chat_toggle player__chat"><svg class="icon icon-chat">
-                          <use xlink:href="img/sprite.svg#icon-chat"></use>
                         </svg></button>
                       <div class="player__control">
                         <div class="player__actions"><button class="player__action"><svg class="icon icon-play">
@@ -458,8 +466,9 @@
                               <use xlink:href="img/sprite.svg#icon-play-window"></use>
                             </svg></button><button class="player__action"><svg class="icon icon-full-screen">
                               <use xlink:href="img/sprite.svg#icon-full-screen"></use>
-                            </svg></button></div>
-                      </div>
+                            </svg></button>
+                            </div>
+                      </div>-->
                     </div>
                     <div class="player__body">
                       <div class="player__row">
