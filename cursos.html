@@ -56,6 +56,8 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
 </script>
 <script>
 $(document).ready( function() {
+
+
     $("#novidades").on("click", function() {
         $("#content").load("novidades.html");
     });
@@ -438,12 +440,10 @@ $(document).ready( function() {
           <div class="h5">TRILHAS SAGA</div>
                   <div class="catalog__box">
                     <div class="catalog__actions"><a class="catalog__action" href="#"><svg class="icon icon-box">
+                          <use xlink:href="./img/sprite.svg#icon-document"></use>
+                        </svg>Historico Flames</a><a class="catalog__action" href="#"><svg class="icon icon-box">
                           <use xlink:href="img/sprite.svg#icon-box"></use>
-                        </svg>Move</a><a class="catalog__action" href="#"><svg class="icon icon-box">
-                          <use xlink:href="img/sprite.svg#icon-box"></use>
-                        </svg>Delete</a><a class="catalog__action" href="#"><svg class="icon icon-box">
-                          <use xlink:href="img/sprite.svg#icon-box"></use>
-                        </svg>Add to Playlist</a></div>
+                        </svg>Minhas trilhas</a></div>
                     <div class="catalog__view"><a class="catalog__link" href="#"><svg class="icon icon-view-list">
                           <use xlink:href="img/sprite.svg#icon-view-list"></use>
                         </svg></a><a class="catalog__link active" href="#"><svg class="icon icon-view-cell">
@@ -470,7 +470,7 @@ $(document).ready( function() {
                       <div class="game__title">Trilha START! - Artista Completo</div>
                       <div class="game__status">
                         <div class="status blue">3 Fases</div>
-                        <div class="status green">30minutos</div>
+                        <div class="status green">30 min</div>
                       </div>
                       <div class="game__status category">
                       <div class="card__category">Arte</div>
@@ -512,7 +512,50 @@ $(document).ready( function() {
                       <div class="game__title"> Trilha PLAYGAME! Concept > Gameplay</div>
                       <div class="game__status">
                         <div class="status blue">3 Fases</div>
-                        <div class="status green">30minutos</div>
+                        <div class="status green">30 min</div>
+                      </div>
+                      <div class="game__status category">
+                      <div class="card__category">Design</div>
+                      <div class="card__category">Arte</div>
+                                    <div class="card__category">Code</div>
+                                    <div class="card__category">Game</div>
+                                    </div>
+                   
+                      
+                      <div class="game__actions"><button class="game__action"><svg class="icon icon-eye">
+                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                          </svg></button>
+                          <button class="game__action">
+                          <svg class="icon icon-like">
+                        <use xlink:href="img/sprite.svg#icon-like"></use>
+                      </svg></button>
+                          <button class="game__action"><svg class="icon icon-play-window">
+                          <use xlink:href="img/sprite.svg#icon-play-window"></use>
+                        </svg></button></div>
+                    </div>
+                  </div>
+                  
+                  <!-- end -->
+
+                  <!-- begin -->
+                  <div class="game">
+  
+                    <div class="flames top">25</div>
+                    <div class="game__preview" style="background-image: url(https://i.pinimg.com/originals/a9/25/c2/a925c2b6b1be05b9776384bc29809e7d.png);">
+                      <div class="game__types">
+                      <div class="main__live presente icon_only"></div>
+                      <div class="main__live live icon_only"></div>
+                      <div class="main__live recorded icon_only grayed"></div>
+                      </div>
+                      <div class="game__line">
+                        <div class="game__progress" style="width: 100%;"></div>
+                      </div>
+                    </div>
+                    <div class="game__details">
+                      <div class="game__title">STREMAER+ @ Conteúdo interativo!</div>
+                      <div class="game__status">
+                        <div class="status blue">3 Fases</div>
+                        <div class="status green">30 min</div>
                       </div>
                       <div class="game__status category">
                       <div class="card__category">Design</div>

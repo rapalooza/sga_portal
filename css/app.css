@@ -1453,7 +1453,15 @@ img {
 }
 
 .status.orange:before {
+  background:  #ff8559;
+}
+
+.status.purple:before {
   background: #6C5DD3;
+}
+
+.status.red:before {
+  background: #d35d5d;
 }
 
 .ava {
@@ -5684,7 +5692,9 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__wrapper {
-  HEIGHT: 90vh;
+  box-shadow: 0px 0px 15px 0px var(--blue) ,0px 0px 0px 5px var(--blue);
+  width:100%;
+  min-height: 680px;
   border-radius: 32px;
   overflow:hidden;
   gap:2px;
@@ -5983,10 +5993,8 @@ body.dark .games .slick-dots li.slick-active button:before {
 }
 
 .player__body {
-  padding: 20px 32px 32px;
+  padding: 20px 32px 90px;
   background: #ffffff;
-  border-radius: 0 0 32px 32px;
-  height: 100%;
 }
 
 .player__body .live {
@@ -7004,6 +7012,7 @@ body.dark .catalog__nav .catalog__link.active {
 }
 
 .game__details {
+  z-index:1;
   padding: 24px 24px 42px;
 }
 
@@ -9344,9 +9353,20 @@ body.dark .popular__item body.dark .popular__btn {
 }
 
 .messenger {
-  width: 375px;
+  margin-right: 0%;
+  width: 50%;
   background: #ffffff;
   border: 1px solid #E3E3E3;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+.messenger_hide {
+  margin-right: -51%;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
 }
 
 .messenger__head {
@@ -9415,10 +9435,9 @@ body.dark .popular__item body.dark .popular__btn {
 }
 
 .messenger__body {
-  font-size:12px;
   position: relative;
   bottom: -1px;
-  height: calc(100% - 84px);
+  height: 650px;
   margin: 0 -1px;
   padding: 6px 0 90px 12px;
 }

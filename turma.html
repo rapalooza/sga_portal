@@ -58,6 +58,11 @@
   </script>
   <script>
     $(document).ready(function () {
+      $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
+      $("#chat_toggle").on("click", function() {
+    $( "#messenger" ).toggleClass( "messenger_hide" );
+  });
+
       $("#novidades").on("click", function () {
         // $("#content").load("novidades.html");
       });
@@ -369,8 +374,9 @@
       </div>
       <div id="content">
         <div class="page__center">
+              <div  class="main__live live"> Curso Ao Vivo</div>
           <div style="text-align:left">
-            <div class="page__info h6 color-gray"> Turma <i>SDG 7003A</i></div>
+            <div class="page__info h6 color-gray"> Turma <i>SDG 7003A</i> </div>
 
             <div class="page__title h2" style="cursor:pointer" onclick='location.href="start.html";'>START 5.0</div>
 
@@ -417,244 +423,265 @@
 
           </div>
 
-          <div class="page__row">
-            <div class="page__col">
-              <div style="width:100%" class="main__live presente"> Curso Presencial</div>
-
-
-              
-              <div class="details details_big">
-                <div class="player__wrapper">
-              <div class="player__container">
-                <div class="player__view" style="background-image: url('img/bg-player.png');">
-                  <div class="player__counter">24K Watching</div><button class="player__toggle"><svg class="icon icon-play">
-                      <use xlink:href="img/sprite.svg#icon-play"></use>
-                    </svg><svg class="icon icon-pause">
-                      <use xlink:href="img/sprite.svg#icon-pause"></use>
-                    </svg></button><button class="player__chat"><svg class="icon icon-chat">
-                      <use xlink:href="img/sprite.svg#icon-chat"></use>
-                    </svg></button>
-                  <div class="player__control">
-                    <div class="player__actions"><button class="player__action"><svg class="icon icon-play">
+          <div class="player__wrapper">
+                  <div class="player__container">
+                    <div class="player__view" style="background-image: url('img/bg-player.png');">
+                      <div class="player__counter">24K Watching</div><button class="player__toggle"><svg
+                          class="icon icon-play">
                           <use xlink:href="img/sprite.svg#icon-play"></use>
                         </svg><svg class="icon icon-pause">
                           <use xlink:href="img/sprite.svg#icon-pause"></use>
+                        </svg></button><button class="player__chat"><svg class="icon icon-chat">
+                          <use xlink:href="img/sprite.svg#icon-chat"></use>
                         </svg></button>
-                      <div class="player__volume"><button class="player__action"><svg class="icon icon-sound-off">
-                            <use xlink:href="img/sprite.svg#icon-sound-off"></use>
-                          </svg><svg class="icon icon-sound-on">
-                            <use xlink:href="img/sprite.svg#icon-sound-on"></use>
-                          </svg></button>
-                        <div class="player__line">
-                          <div class="player__progress" style="width: 50%;"></div>
+                      <div class="player__control">
+                        <div class="player__actions"><button class="player__action"><svg class="icon icon-play">
+                              <use xlink:href="img/sprite.svg#icon-play"></use>
+                            </svg><svg class="icon icon-pause">
+                              <use xlink:href="img/sprite.svg#icon-pause"></use>
+                            </svg></button>
+                          <div class="player__volume"><button class="player__action"><svg class="icon icon-sound-off">
+                                <use xlink:href="img/sprite.svg#icon-sound-off"></use>
+                              </svg><svg class="icon icon-sound-on">
+                                <use xlink:href="img/sprite.svg#icon-sound-on"></use>
+                              </svg></button>
+                            <div class="player__line">
+                              <div class="player__progress" style="width: 50%;"></div>
+                            </div>
+                          </div>
                         </div>
+                        <div class="player__actions"><button class="player__action"><svg
+                              class="icon icon-settings-fill">
+                              <use xlink:href="img/sprite.svg#icon-settings-fill"></use>
+                            </svg></button><button class="player__action"><svg class="icon icon-play-window">
+                              <use xlink:href="img/sprite.svg#icon-play-window"></use>
+                            </svg></button><button id="chat_toggle" class="player__action"><svg class="icon icon-full-screen">
+                              <use xlink:href="img/sprite.svg#icon-full-screen"></use>
+                            </svg></button></div>
                       </div>
                     </div>
-                    <div class="player__actions"><button class="player__action"><svg class="icon icon-settings-fill">
-                          <use xlink:href="img/sprite.svg#icon-settings-fill"></use>
-                        </svg></button><button class="player__action"><svg class="icon icon-play-window">
-                          <use xlink:href="img/sprite.svg#icon-play-window"></use>
-                        </svg></button><button class="player__action"><svg class="icon icon-full-screen">
-                          <use xlink:href="img/sprite.svg#icon-full-screen"></use>
-                        </svg></button></div>
-                  </div>
-                </div>
-                <div class="player__body">
-                  <div class="player__row">
-                    <div class="player__inner">
-                      <div class="live live_big">Live</div>
-                      <div class="player__info h4">Aula 01 : Como faz um ovo?</div>
-                      <div class="player__parameters">
-                        <div class="player__parameter">
-                          <div class="card__user">
-                    <div class="card__ava"><img class="card__pic" src="img/ava-4.png" alt=""></div>
-                    <div class="card__desc">
-                      <div class="card__man">Gabriel Erickson</div>
-                      <div class="card__game">Garena Free Fire</div>
-                    </div>
-                  </div>
+                    <div class="player__body">
+                      <div class="player__row">
+                        <div class="player__inner">
+                          <div class="live live_big">Live</div>
+                          <div class="player__info h4">Aula 01 : Como faz um ovo?</div>
+                          <div class="player__parameters">
+                            <div class="player__parameter">
+                              <div class="card__user">
+                                <div class="card__ava"><img class="card__pic" src="img/ava-4.png" alt=""></div>
+                                <div class="card__desc">
+                                  <div class="card__man">Gabriel Erickson</div>
+                                  <div class="card__game">Garena Free Fire</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="player__cards"><img class="player__pic" src="img/cards.png" alt="">
+                          <div class="player__caption">START! 5.0</div>
                         </div>
                       </div>
-                    </div>
-                    <div class="player__cards"><img class="player__pic" src="img/cards.png" alt="">
-                      <div class="player__caption">START! 5.0</div>
-                    </div>
-                  </div>
-                  <div class="player__btns"><button class="player__btn btn btn_gray"><svg class="icon icon-like">
-                        <use xlink:href="img/sprite.svg#icon-like"></use>
-                      </svg><span class="btn__text">Like</span></button><button class="player__btn btn btn_gray"><svg class="icon icon-share-1">
-                        <use xlink:href="img/sprite.svg#icon-share-1"></use>
-                      </svg><span class="btn__text">Share</span></button><button class="player__btn btn btn_gray"> <svg class="icon icon-add">
-                        <use xlink:href="img/sprite.svg#icon-add"></use>
-                      </svg><span class="btn__text">Add to Playlist</span></button><button class="player__btn btn btn_gray btn_square"><svg class="icon icon-dots-border">
-                        <use xlink:href="img/sprite.svg#icon-dots-border"></use>
-                      </svg></button></div>
-                </div>
-              </div>
-              <div class="messenger show">
-                <div class="messenger__head">
-                
-                </div>
-                <div class="messenger__body">
-                  <div class="messenger__list">
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Corey Diaz</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                          <div class="messenger__text">Avoid combat, watch the jungle<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                          <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Terry Hodges</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Rush trying so hard to carry monkeys<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Kevin Carpenter</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Great!<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-4.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Julian Parks</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Rush trying so hard to carry monkeys<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-5.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Don Mann</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Great!<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Corey Diaz</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                          <div class="messenger__text">Avoid combat, watch the jungle<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                          <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Terry Hodges</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Rush trying so hard to carry monkeys<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="messenger__item">
-                      <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
-                      <div class="messenger__details">
-                        <div class="messenger__top">
-                          <div class="messenger__man">Kevin Carpenter</div>
-                          <div class="messenger__time">1m</div>
-                        </div>
-                        <div class="messenger__group">
-                          <div class="messenger__text">Great!<button class="messenger__report"><svg class="icon icon-menu-vertical">
-                                <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                              </svg>
-                              <div class="messenger__tooltip">Report</div>
-                            </button></div>
-                        </div>
-                      </div>
+                      <div class="player__btns"><button class="player__btn btn btn_gray"><svg class="icon icon-like">
+                            <use xlink:href="img/sprite.svg#icon-like"></use>
+                          </svg><span class="btn__text">Like</span></button><button
+                          class="player__btn btn btn_gray"><svg class="icon icon-share-1">
+                            <use xlink:href="img/sprite.svg#icon-share-1"></use>
+                          </svg><span class="btn__text">Share</span></button><button class="player__btn btn btn_gray">
+                          <svg class="icon icon-add">
+                            <use xlink:href="img/sprite.svg#icon-add"></use>
+                          </svg><span class="btn__text">Add to Playlist</span></button><button
+                          class="player__btn btn btn_gray btn_square"><svg class="icon icon-dots-border">
+                            <use xlink:href="img/sprite.svg#icon-dots-border"></use>
+                          </svg></button></div>
                     </div>
                   </div>
-                  <div class="messenger__foot"><input class="messenger__input" type="text" placeholder="Send a message…"><button class="messenger__btn btn btn_purple">Send</button><button class="messenger__smile"><svg class="icon icon-editor-smile">
-                        <use xlink:href="img/sprite.svg#icon-editor-smile"></use>
-                      </svg></button></div>
+                  <div id="messenger" class="messenger show">
+                    <div class="messenger__head">
+
+                    </div>
+                    <div  class="messenger__body">
+                      <div id="messenger_body" class="messenger__list">
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Corey Diaz</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                              <div class="messenger__text">Avoid combat, watch the jungle<button
+                                  class="messenger__report"><svg class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                              <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Terry Hodges</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
+                                  class="messenger__report"><svg class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Kevin Carpenter</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Great!<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-4.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Julian Parks</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
+                                  class="messenger__report"><svg class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-5.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Don Mann</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Great!<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Corey Diaz</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                              <div class="messenger__text">Avoid combat, watch the jungle<button
+                                  class="messenger__report"><svg class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                              <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Terry Hodges</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
+                                  class="messenger__report"><svg class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="messenger__item">
+                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
+                          <div class="messenger__details">
+                            <div class="messenger__top">
+                              <div class="messenger__man">Kevin Carpenter</div>
+                              <div class="messenger__time">1m</div>
+                            </div>
+                            <div class="messenger__group">
+                              <div class="messenger__text">Great!<button class="messenger__report"><svg
+                                    class="icon icon-menu-vertical">
+                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
+                                  </svg>
+                                  <div class="messenger__tooltip">Report</div>
+                                </button></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="messenger__foot"><input class="messenger__input" type="text"
+                          placeholder="Send a message…"><button
+                          class="messenger__btn btn btn_purple">Send</button><button class="messenger__smile"><svg
+                            class="icon icon-editor-smile">
+                            <use xlink:href="img/sprite.svg#icon-editor-smile"></use>
+                          </svg></button></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+
+          <div class="page__row">
+            <div class="page__col">
+
+
+
+              <div class="details details_big">
+               
                 <div class="details__container">
                   <div class="details__row">
-                    
+
                     <div class="details__col">
                       <div class="upload__item js-tabs-item">
                         <div class="upload__wrap upload__wrap_image"
@@ -664,23 +691,25 @@
                             <div class="upload__text h8">18:00</div>
                             <div class="upload__info h4"><b class="color-purple">01.</b>Tema da primeira aula e logo
                               abaixo um assunto.</div>
-                           <div class="upload__text" style="display: flex;
+                            <div class="upload__text" style="display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;">
-                            <button class="upload__btn btn btn_blue grayed">
-                              <svg class="icon icon-upload">
-                                <use xlink:href="img/sprite.svg#icon-upload"></use>
-                              </svg><span class="btn__text">Sala de Aula</span></button>
-                              <button class="author__btn btn btn_blue btn_square pdf_popup" href="presenca.html" data-effect="mfp-zoom-in"><svg class="icon icon-profile-check">
-                    <use xlink:href="img/sprite.svg#icon-profile-check"></use>
-                  </svg></button>
-                </div>
+                              <button class="upload__btn btn btn_blue grayed">
+                                <svg class="icon icon-upload">
+                                  <use xlink:href="img/sprite.svg#icon-upload"></use>
+                                </svg><span class="btn__text">Sala de Aula</span></button>
+                              <button class="author__btn btn btn_blue btn_square pdf_popup" href="presenca.html"
+                                data-effect="mfp-zoom-in"><svg class="icon icon-profile-check">
+                                  <use xlink:href="img/sprite.svg#icon-profile-check"></use>
+                                </svg></button>
+                            </div>
                           </div>
                         </div>
                       </div>
 
-                    </div><div class="widget widget_center widget_shadow widget_earning">
+                    </div>
+                    <div class="widget widget_center widget_shadow widget_earning">
                       <div class="widget__chart">
                         <div id="chart-users-blue"></div>
                       </div>
@@ -921,7 +950,7 @@
                           </div>
                         </div>
                         <div class="player__body">
-                          <div class="player__info h2">Como fazer um ovo - SAGA START! - FASE03</div>
+                          <div class="player__info h6">Como fazer um ovo - SAGA START! - FASE03</div>
                           <div class="player__parameters">
 
                           </div>
