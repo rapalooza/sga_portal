@@ -9431,7 +9431,8 @@ body.dark .popular__item body.dark .popular__btn {
 }
 
 .messenger__close {
-  display: none;
+  
+  display: inline-block;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -11795,7 +11796,6 @@ body.dark .views__item:before {
     display: none;
   }
   .messenger__close {
-    display: inline-block;
   }
   .videos {
     display: block;
