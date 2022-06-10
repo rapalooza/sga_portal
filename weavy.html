@@ -44,8 +44,28 @@
         viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
       }
     }</script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@weavy/dropin-js/dist/weavy-dropin.css" rel="stylesheet" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/@weavy/dropin-js/dist/weavy-dropin.js"></script>
+
 </head>
 
+
+<script>
+  const weavy = new Weavy({
+    url: "https://saga.weavy.io",
+    jwt: () => "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXQud2VhdnkuaW8iLCJzdWIiOjIyODcsImRpciI6IlNhbmRib3giLCJnaXZlbl9uYW1lIjoiRGFjaWFubyIsImZhbWlseV9uYW1lIjoiQmVuaW5pIiwiZW1haWwiOiJkYWNpYW5vYmVuaW5pQGdtYWlsLmNvbSIsImV4cCI6MTY1NTQ1OTE3OX0.yTkPg6m5iX0_IFxbWo0qcPmM7AU0gIvI7MqNa-IMvXQ"   
+  });
+
+  var space = weavy.space({ key: "demo" });
+  const messenger = space.app({
+    id: "messenger1234",
+    type: "messenger",    
+    container: "#messengerweavy",
+  open: true,
+  badge: false
+  });
+</script>
 <body>
   <script>
     console.log(localStorage.getItem('darkMode'));
@@ -78,6 +98,7 @@
     });
   </script>
   <div class="page">
+  <div id="messengerweavy" style="height:600px;border:1px solid black;margin-top:200px"></div>
     <div class="sidebar">
       <div class="sidebar__top"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_black"
             src="./img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_white" src="./img/logo-white.svg"
@@ -675,9 +696,7 @@
                       </div>
                       <div id="messenger__foot" class="messenger__foot"><input class="messenger__input" type="text"
                           placeholder="Mensagem..."><button
-                          class="messenger__btn btn btn_purple"><svg class="icon icon-messenger-send">
-                            <use xlink:href="img/sprite.svg#icon-share-1"></use>
-                          </svg></button><button class="messenger__smile"><svg
+                          class="messenger__btn btn btn_purple">></button><button class="messenger__smile"><svg
                             class="icon icon-editor-smile">
                             <use xlink:href="img/sprite.svg#icon-editor-smile"></use>
                           </svg></button></div>

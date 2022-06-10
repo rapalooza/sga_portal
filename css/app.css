@@ -5693,7 +5693,6 @@ body.dark .games .slick-dots li.slick-active button:before {
 
 .player__wrapper {
   width:100%;
-  overflow:hidden;
   gap:12px;
   display:flex;
   position: relative;
@@ -9360,6 +9359,7 @@ body.dark .popular__item body.dark .popular__btn {
 
 .messenger {
   
+  opacity: 1;
   border-radius:32px;
   overflow:hidden;
   margin-right: 0%;
@@ -9368,9 +9368,11 @@ body.dark .popular__item body.dark .popular__btn {
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .messenger_hide {
+  opacity: 0 !important;
   margin-right: -51%;
   -webkit-transition: all .25s;
   -o-transition: all .25s;
@@ -9635,6 +9637,7 @@ body.dark .popular__item body.dark .popular__btn {
 }
 
 .messenger__btn {
+  fill:#fff;
   position: absolute;
   top: 50%;
   right: 12px;
@@ -9643,7 +9646,12 @@ body.dark .popular__item body.dark .popular__btn {
   transform: translateY(-50%);
   min-width: 50px;
 }
-
+.icon-messenger-send {
+  font-size: 15px !important;
+  width: 1.21em;
+  height: 1em;
+  fill: #fff;
+}
 .messenger__report {
   position: absolute;
   top: 0;
