@@ -5890,8 +5890,8 @@ body.dark .games .slick-dots li.slick-active button:before {
 
 .player__chat {
   position: absolute;
-  top: 24px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -9387,7 +9387,7 @@ body.dark .popular__item body.dark .popular__btn {
   -ms-flex-align: center;
   align-items: center;
   height: 64px;
-  padding: 0 30px;
+  padding: 0 12px 0 24px;
 }
 
 .messenger__full {
@@ -11554,9 +11554,6 @@ body.dark .views__item:before {
     top: 24px;
     left: 24px;
   }
-  .player__chat {
-    display: inline-block;
-  }
   .player__info {
     max-width: 100%;
   }
@@ -12637,9 +12634,6 @@ body.dark .views__item:before {
     right: 8px;
     bottom: 8px;
   }
-  .player__chat {
-    top: 16px;
-  }
   .player__toggle {
     width: 56px;
     height: 56px;
@@ -13176,6 +13170,7 @@ body.dark .views__item:before {
     background: #E3E3E3;
   }
   .messenger {
+    border-radius: 0px;
     z-index: 99;
     position: fixed;
     top: 80px;
@@ -13185,7 +13180,7 @@ body.dark .views__item:before {
   }
   .messenger__head {
     height: 64px;
-    padding: 0 24px;
+    padding: 0 12px 0 24px;
   }
   .messenger__close {
     width: 40px;

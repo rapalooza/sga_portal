@@ -153,15 +153,14 @@ player.on('timeupdate', event => {
   </script>
   <script>
     $(document).ready(function () {
-      if ( screen.width < 1259 ){
+      if ( screen.width > 1259 ){
         
     $( "#messenger" ).removeClass( "show" );
-    $( "#messenger" ).addClass( "messenger_hide" );
+    $( "#messenger" ).removeClass( "messenger_hide" );
       }
       $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
       $(".chat_toggle").on("click", function() {
     $( "#messenger" ).toggleClass( "messenger_hide" );
-    $( "#messenger__foot" ).toggleClass( "mfh_hide" );
   });
 
       $("#novidades").on("click", function () {
@@ -604,7 +603,7 @@ player.on('timeupdate', event => {
                           </svg></button></div>
                     </div>
                   </div>
-                  <div id="messenger" class="messenger show">
+                  <div id="messenger" class="messenger messenger_hide">
                     <div class="messenger__head">
                       <div class="messenger__title h6 mr-auto">Chat da turma</div>
                       <button class="chat_toggle messenger__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
@@ -783,6 +782,43 @@ player.on('timeupdate', event => {
                     </div>
                   </div>
                 </div>
+
+                <div class="users">
+            <div class="users__container">
+              <div class="users__info h6">Aulos Online</div>
+              <div class="users__list"><a class="users__item" href="#">
+                  <div class="ava ava_online"><img class="ava__pic" src="img/ava-1.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_play"><img class="ava__pic" src="img/ava-2.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_online-blue"><img class="ava__pic" src="img/ava-3.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_network"><img class="ava__pic" src="img/ava-4.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_network"><img class="ava__pic" src="img/ava-5.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_online"><img class="ava__pic" src="img/ava-1.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a><a class="users__item" href="#">
+                  <div class="ava ava_play"><img class="ava__pic" src="img/ava-2.png" alt="" /></div>
+                  <div class="users__title">Gabriel  Erickson </div>
+                  <div class="users__time">14m ago</div>
+                </a></div>
+            </div>
+          </div>
+
+
 
           <div class="page__row">
             <div class="page__col">
