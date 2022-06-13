@@ -150,9 +150,27 @@ player.on('timeupdatex', event => {
                 url += "?username="+"Aluno"+(Math.floor(Math.random()*100))+"&room=sala01"
                 var el = document.getElementById('sagachat');
                 el.src = url;
-                console.log('change url')
+                console.log('change url');
+
+                $(".js-switch-theme").on("click", function () {
+
+                  if (localStorage.getItem('darkMode') === "off" ){
+    document.getElementById('sagachat').contentWindow.postMessage('dark','*');} else{
+    document.getElementById('sagachat').contentWindow.postMessage('white','*');
+ }
+});
+                $('#sagachat').on('load', function() {
+
+    if (localStorage.getItem('darkMode') === "on" ){
+    document.getElementById('sagachat').contentWindow.postMessage('dark','*');} else{
+    document.getElementById('sagachat').contentWindow.postMessage('white','*');
+      
+    }
+});
+                
   });
                 </script>
+
   <script>
     console.log(localStorage.getItem('darkMode'));
     if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode')) {
@@ -623,7 +641,7 @@ player.on('timeupdatex', event => {
                     <button class="chat_toggle messenger__close"><svg class="icon icon-close">
                     <use xlink:href="img/sprite.svg#icon-close"></use>
                 </svg></button>
-                    <iframe scrolling="no" id="sagachat" style="width:100%; height:100%; border: 0px;" src="none"></iframe></div>
+                    <iframe scrolling="no"  id="sagachat" style="width:100%; height:100%; border: 0px;" src="none"></iframe></div>
                 </div>
 
                 <div class="users">
