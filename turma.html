@@ -71,57 +71,7 @@ function fancyTimeFormat(duration)
   ret += "" + secs;
   return ret;
 }
-    document.addEventListener('DOMContentLoaded', () => {
-// First real dialog starts around 1:47
-const source = 'https://bitmovin-a.akamaihd.net/content/sintel/sintel.mpd';
-// For more dash options, see https://github.com/Dash-Industry-Forum/dash.js
-const dash = dashjs.MediaPlayer().create();
-const video = document.querySelector('video');
-dash.initialize(video, source, true);
-
-// Update caption tracks after initializing Plyr to get the generated captions
-// For more options see: https://github.com/sampotts/plyr/#options
-const player = new Plyr(video, {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'], captions: {active: false, update: false}, settings: ['captions', 'quality', 'loop']});
-player.poster = "http://127.0.0.1:3535/sga/img/player-pic-2.png"
-// Expose player and dash so they can be used from the console
-
-window.player = player;
-window.dash = dash;
-var last_tick = fancyTimeFormat(player.currentTime);
-var viwed_timer = 0;
-player.on('timeupdatex', event => {
-    var percent = Math.round(viwed_timer*100/(player.duration/12));
-  if( last_tick != fancyTimeFormat(player.currentTime) && percent <= 100){
-    var bar = document.getElementById('main_video_bar');
-    var value = document.getElementById('main_video_value');
-    var coin = document.getElementById('coin_flow');
-    bar.style.width = percent+"%";
-    value.innerText = percent+"%";
-    coin.style.opacity = 1;
-    if(percent > 50){
-      bar.style.background = "#ffc534";
-    }
-    if(percent > 75){
-      bar.style.background = "#ffc534";
-    }
-    if(percent >= 100){
-      value.innerText = "FLAME!";
-      bar.style.background = "#ffc534";
-      anim_video.play();
-    var coin_bar = document.getElementById('coin_bar');
-    
-    coin_bar.style.opacity = 0;
-    }
-    viwed_timer++
-    console.log(viwed_timer+"s assistidos");
-    console.log(percent+"% assistido");
-    last_tick = fancyTimeFormat(player.currentTime);
-  }
-//console.log(fancyTimeFormat(player.currentTime));
-//var timer_fix = Math.floor((viwed_timer++)/3.8);
-//console.log(timer_fix)
-});
-});
+   
   </script>
 
 
@@ -564,8 +514,23 @@ player.on('timeupdatex', event => {
           <div class="player__wrapper">
                   <div class="player__container">
                     <div class="player__view" style="background-image: url('img/bg-player.png');">
-                      <video style="object-fit: fill;width:100%;height:100%;" controls crossorigin playsinline poster="https://bitdash-a.akamaihd.net/content/sintel/poster.png"></video>
-
+                      <script src="https://xqq.im/mpegts.js/dist/mpegts.js"></script>
+<video style="top:0px;position:absolute;object-fit: fill;width:100%;height:100%;" id="videoElement" playsinline controls autoplay muted></video>
+<script>
+    if (mpegts.getFeatureList().mseLivePlayback) {
+        var videoElement = document.getElementById('videoElement');
+        var player = mpegts.createPlayer({
+            type: 'flv',  // could also be mpegts, m2ts, flv
+            isLive: true,
+            url: 'https://24.152.38.7:8443/live/stream.flv'
+        });
+        player.attachMediaElement(videoElement);
+        player.load();
+        player.play();
+   
+    }
+    
+</script>
 
                        <div class="player__counter">24K Watching</div>
                       <button class="chat_toggle player__chat"><svg class="icon icon-chat">
