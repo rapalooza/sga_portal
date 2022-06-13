@@ -89,7 +89,7 @@ window.player = player;
 window.dash = dash;
 var last_tick = fancyTimeFormat(player.currentTime);
 var viwed_timer = 0;
-player.on('timeupdate', event => {
+player.on('timeupdatex', event => {
     var percent = Math.round(viwed_timer*100/(player.duration/12));
   if( last_tick != fancyTimeFormat(player.currentTime) && percent <= 100){
     var bar = document.getElementById('main_video_bar');
@@ -152,16 +152,24 @@ player.on('timeupdate', event => {
     }
   </script>
   <script>
+    
     $(document).ready(function () {
+      $(".chat_toggle").on("click", function(event) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    console.log('Toggle Chat')
+    $( "#messenger" ).toggleClass( "messenger_hide" );
+  });
+      
       if ( screen.width > 1259 ){
         
     $( "#messenger" ).removeClass( "show" );
     $( "#messenger" ).removeClass( "messenger_hide" );
       }
+
       $("#messenger_body").scrollTop($("#messenger_body")[0].scrollHeight);
-      $(".chat_toggle").on("click", function() {
-    $( "#messenger" ).toggleClass( "messenger_hide" );
-  });
+
+     
 
       $("#novidades").on("click", function () {
         // $("#content").load("novidades.html");
@@ -571,7 +579,7 @@ player.on('timeupdate', event => {
                       <div class="player__row">
                         <div class="player__inner">
                           <div class="card__category">Modulo 4</div>
-                          <div class="card__category">Aula 1</div>
+                          <div class="card__category">Aula 01</div>
                           <div class="player__info h4">Introdução à design e suas funções!</div>
                           <div class="player__parameters">
                             <div class="player__parameter">
@@ -594,190 +602,17 @@ player.on('timeupdate', event => {
                           </svg><span class="btn__text">Like</span></button><button class="player__btn btn btn_gray">
                           <svg class="icon icon-add">
                             <use xlink:href="img/sprite.svg#icon-add"></use>
-                          </svg><span class="btn__text">Material</span></button><button class="player__btn btn btn_blue pdf_popup" href="presenca.html"
+                          </svg><span class="btn__text">Duvida</span></button><button class="player__btn btn btn_blue pdf_popup" href="presenca.html"
                                 data-effect="mfp-zoom-in"><svg class="icon icon-profile-check">
                                   <use xlink:href="img/sprite.svg#icon-profile-check"></use>
                                 </svg><span class="btn__text">Presença</span></button></div>
                     </div>
                   </div>
                   <div id="messenger" class="messenger messenger_hide">
-                    <div class="messenger__head">
-                      <div class="messenger__title h6 mr-auto">Chat da turma</div>
-                      <button class="chat_toggle messenger__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
-                    </div>
-                    <div  class="messenger__body">
-                      <div id="messenger_body" class="messenger__list">
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Corey Diaz</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                              <div class="messenger__text">Avoid combat, watch the jungle<button
-                                  class="messenger__report"><svg class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                              <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Terry Hodges</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
-                                  class="messenger__report"><svg class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Kevin Carpenter</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Great!<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-4.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Julian Parks</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
-                                  class="messenger__report"><svg class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-5.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Don Mann</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Great!<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-1.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Corey Diaz</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Hey team, 😎<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                              <div class="messenger__text">Avoid combat, watch the jungle<button
-                                  class="messenger__report"><svg class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                              <div class="messenger__text">Focus on the tower 🐝<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-2.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Terry Hodges</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Rush trying so hard to carry monkeys<button
-                                  class="messenger__report"><svg class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="messenger__item">
-                          <div class="messenger__ava"><img class="messenger__pic" src="img/ava-3.png" alt=""></div>
-                          <div class="messenger__details">
-                            <div class="messenger__top">
-                              <div class="messenger__man">Kevin Carpenter</div>
-                              <div class="messenger__time">1m</div>
-                            </div>
-                            <div class="messenger__group">
-                              <div class="messenger__text">Great!<button class="messenger__report"><svg
-                                    class="icon icon-menu-vertical">
-                                    <use xlink:href="img/sprite.svg#icon-menu-vertical"></use>
-                                  </svg>
-                                  <div class="messenger__tooltip">Report</div>
-                                </button></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="messenger__foot" class="messenger__foot"><input class="messenger__input" type="text"
-                          placeholder="Mensagem..."><button
-                          class="messenger__btn btn btn_purple"><svg class="icon icon-messenger-send">
-                            <use xlink:href="img/sprite.svg#icon-share-1"></use>
-                          </svg></button><button class="messenger__smile"><svg
-                            class="icon icon-editor-smile">
-                            <use xlink:href="img/sprite.svg#icon-editor-smile"></use>
-                          </svg></button></div>
-                    </div>
-                  </div>
+                    <button class="chat_toggle messenger__close"><svg class="icon icon-close">
+                    <use xlink:href="img/sprite.svg#icon-close"></use>
+                </svg></button>
+                    <iframe style="width:100%; height:100%; border: 0px;" src="chat.html"></iframe></div>
                 </div>
 
                 <div class="users">

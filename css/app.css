@@ -9433,6 +9433,9 @@ body.dark .popular__item body.dark .popular__btn {
 .messenger__close {
   
   display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 8px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -9450,7 +9453,7 @@ body.dark .popular__item body.dark .popular__btn {
   bottom: -1px;
   height: 650px;
   margin: 0 -1px;
-  padding: 6px 0 90px 12px;
+  padding: 6px 0 90px 0px;
 }
 
 .messenger__body:before {
@@ -9471,8 +9474,7 @@ body.dark .popular__item body.dark .popular__btn {
 .messenger__list {
   max-height: 100%;
   overflow: auto;
-  padding-right: 16px;
-  padding-bottom: 24px;
+  padding:30px;
 }
 
 .messenger__item {
@@ -13200,16 +13202,12 @@ body.dark .views__item:before {
     opacity: 0;
   }
   .messenger__body:before {
-    bottom: 70px;
   }
   .messenger__foot {
-    left: 0;
-    right: 0;
-    bottom: 0;
+    
+    
   }
   .messenger__input {
-    height: 70px;
-    border-radius: 0;
   }
   .videos__list {
     -ms-flex-wrap: nowrap;
