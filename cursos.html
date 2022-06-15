@@ -96,17 +96,17 @@ $(document).ready( function() {
     <div class="game__types">
     <div class="main__live presente icon_only `+ (curso.Modos.includes("Presencial") ? '' : 'grayed') +`"></div>
     <div class="main__live live icon_only `+ (curso.Modos.includes("Online") ? '' : 'grayed') +`"></div>
-    <div class="main__live recorded icon_only `+ (curso.Modos.includes("Gravado") ? '' : 'grayed') +`"></div>
+    <div class="main__live recorded icon_only `+ (curso.Modos.includes("Video") ? '' : 'grayed') +`"></div>
     </div>
     <div class="game__line">
-      <div class="game__progress" style="width: 40%;"></div>
+      <div class="game__progress" style="width: 100%;"></div>
     </div>
   </div>
   <div class="game__details">
     <div class="game__title">${curso.Nome + " - " +curso.Descrição_pequena}</div>
     <div class="game__status">
       <div class="status blue">${curso.Modulos.length} Fases</div>
-      <div class="status green">${(curso.Aulas*30)} min</div>
+      <div class="status green">${(curso.Aulas)} Horas</div>
     </div>
     <div class="game__status category">
    ${(htmltags)}

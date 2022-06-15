@@ -1,4 +1,5 @@
 [{
+        "id":   1,
         "Nome": "Start",
         "Descrição_pequena": "Curso compleo para artistas e designers.",
         "Descrição": "Tudo em uma única jornada. O curso Start 5.0 SAGA é um treinamento completo e generalista que leva você ao estudo prático dos softwares mais utilizados do mercado, com o objetivo de evoluir as suas habilidades para a construção de um portfólio e direcionar para uma carreira na área desejada. Aprenda ilustração vetorial, pintura digital, composição de imagens, efeitos visuais, edição e motion graphics para vídeos, além de criar projetos interativos em 3D para realidades virtual e aumentada.",
@@ -8,13 +9,33 @@
         "Modulos": ["Arte Vetorial","Composição de Imagem","Pintura Digital","Motion Graphics","Edição AudioVisual","3DI - Cenários3D","3DII - Personagen3D","3DIII - Animação3D","Metaverso Imersivo9"],
         "Softwares": ["Adobe Photoshop", "Adobe Illustrator","Adobe After Effects","Adobe Premiere","Adobe Audition","Blender","Substance Painter","Zbrush","Spark AR Studio","Unreal Engine"],
         "Publico": "Iniciantes, estudantes e interessados em artes digitais, design, 3D, criação e edição de vídeos, realidade virtual, aumentada.", 
-        "Aulas": 20,
+        "Aulas": 270,
         "Meses": 24,
         "Modos": ["Online","Presencial"],
         "Tags": ["Games","Arte","Desing","Video"],
         "Freemium": true,
         "Jornada_Tamanho": 3,
         "Jornada_Valor": 35,
-        "Jornada_Premio": 20
+        "Jornada_Premio": 100
+    },
+    {
+        "id":   1,
+        "Nome": "PLAYEGAME",
+        "Descrição_pequena": "Aprenda criação de jogos 2D e 3D na Unreal Engine.",
+        "Descrição": " O curso de criação de jogos mais atualizado do Brasil. Aprenda a fazer jogos 2D e 3D para diversas plataformas vivenciando todas as etapas, desde a pré-produção até a criação de um protótipo jogável e sua documentação, evoluindo dentro de um processo de trabalho similar aos dos estúdios profissionais de games. Dê os seus primeiros passos para começar a criar seus jogos na poderosa Unreal Engine, motor de jogos mais utilizado e avançado do mundo. Mergulhe neste curso e conclua os seus estudos com os seus primeiros projetos para um portfólio profissional.",
+        "Valor_matricula": 500,
+        "Valor_reais": 500,
+        "imgURL": "img/curso-pg.png",
+        "Modulos": ["Planejamento e Pré Produção","CONCEPT ART 2D","GAME DEV 2D", "MODELAGEM 3D", "GAME DEV 3D"],
+        "Publico": "Iniciantes, estudantes e interessados em aprender desenvolvimento de jogos para entrar em um dos mercados mais rentáveis em crescimento no mundo.", 
+        "Aulas": 120,
+        "Meses": 12,
+        "Modos": ["Online","Presencial","Video"],
+        "Tags": ["Games","Arte","DEV","Concept"],
+        "Freemium": true,
+        "Jornada_Tamanho": 3,
+        "Jornada_Valor": 50,
+        "Jornada_Premio": 100
     }
+    
 ]

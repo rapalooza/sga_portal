@@ -181,7 +181,7 @@ window.location.href = "cursos.html";}
     console.log(curso)
     document.querySelector('.author__man').innerHTML = curso[0].Nome;
     document.querySelector('.curso__note').innerHTML = curso[0].Descrição+"<br><br> Indicado: "+curso[0].Publico;
-    document.querySelector('#Duração').innerHTML = curso[0].Meses+" meses";
+    document.querySelector('#Duração').innerHTML = curso[0].Aulas+" horas em "+curso[0].Meses+" meses";
     document.querySelector('#Modulos').innerHTML = curso[0].Modulos.length;
     document.querySelector('#Modos').innerHTML = curso[0].Modos;
     document.querySelector('#Tags').innerHTML = curso[0].Tags;
@@ -189,7 +189,7 @@ window.location.href = "cursos.html";}
     let modos = `
     <div class="presente `+ (curso[0].Modos.includes("Presencial") ? '' : 'hidden') +`">Presente</div>
     <div class="live `+ (curso[0].Modos.includes("Online") ? '' : 'hidden') +`">Live</div>
-    <div class="video `+ (curso[0].Modos.includes("Video") ? '' : 'hidden') +`">Video</div>`
+    <div class="recorded `+ (curso[0].Modos.includes("Video") ? '' : 'hidden') +`">Video</div>`
     document.querySelector('#Modos_icon').innerHTML = modos;
 }
 
