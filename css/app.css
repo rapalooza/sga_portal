@@ -9473,8 +9473,9 @@ body.dark .popular__item body.dark .popular__btn {
 
 .messenger__list {
   max-height: 100%;
-  overflow: auto;
-  padding:30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding:0px 24px 24px 24px;
 }
 
 .messenger__item {
@@ -9483,7 +9484,7 @@ body.dark .popular__item body.dark .popular__btn {
   display: flex;
 }
 
-.messenger__item:not(:last-child) {
+.messenger__item:is(:last-child) {
   margin-bottom: 24px;
 }
 
@@ -9530,6 +9531,42 @@ body.dark .popular__item body.dark .popular__btn {
   border-radius: 10px;
 }
 
+@keyframes fadeIn {
+  0% {
+      transform: scale(0);
+      opacity: 0.0;       
+  }
+  60% {
+      transform: scale(1.1);  
+  }
+  80% {
+      transform: scale(0.9);
+      opacity: 1; 
+  }   
+  100% {
+      transform: scale(1);
+      opacity: 1; 
+  }       
+}
+
+.emoji{
+  transition: all .25s;
+  width: 100%;
+  position: absolute;
+  bottom: 90px !important;
+  z-index: 9;
+  /* height: 1vh; */
+  /* bottom: 0px; */
+  opacity: 1;
+}
+.emoji_hide{
+  
+  transform: scale(0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .25s;
+}
+
 .messenger__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9573,6 +9610,23 @@ body.dark .popular__item body.dark .popular__btn {
   color: #808191;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.messenger_warn {
+  color: #f44336;
+  background: rgb(255 32 32 / 24%) !important;
+  border-radius: 20px !important;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+.messenger_server {
+  color: #3f8cff;
+    background: rgb(46 147 255 / 24%) !important;
+    border-radius: 20px !important;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
 }
 
 .messenger__text:nth-child(2n+1) {
@@ -10683,6 +10737,10 @@ body.dark .login__close:hover .icon {
   width: 80px;
 }
 
+.show {
+  opacity: 1 !important;
+  transition: all .5s;
+}
 .views__cell:nth-child(2) {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -11318,6 +11376,7 @@ body.dark .views__item:before {
   .widget__parameters {
     padding-top: 60px;
   }
+
   .messages .games {
     display: block;
     width: 100%;
@@ -11726,6 +11785,15 @@ body.dark .views__item:before {
   }
   .chat__action:not(:last-child) {
     margin-right: 24px;
+  }
+
+  .message {
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn; 
+    animation-duration: 0.5s;   
+    -webkit-animation-duration: 0.5s;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out; 
   }
   .messages__ava {
     width: 48px;
