@@ -29,7 +29,99 @@
     <meta property="fb:admins" content="132951670226590">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' rel='stylesheet'>   
+    <link href='https://unpkg.com/plyr@3/dist/plyr.css' rel='stylesheet'>   
     <link href='https://css.gg/css' rel='stylesheet'>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css' rel='stylesheet'>
+    <script src="https://unpkg.com/plyr@3"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+    <style>
+      :root {
+  --plyr-color-main: var(--orange);
+}
+      .plyr--video {
+    height: 100%!important;
+      }
+    </style>
+ 
+    <script>
+
+function fancyTimeFormat(duration)
+{   
+    // Hours, minutes and seconds
+    var hrs = ~~(duration / 3600);
+    var mins = ~~((duration % 3600) / 60);
+    var secs = ~~duration % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+}
+      document.addEventListener('DOMContentLoaded', () => {
+	// First real dialog starts around 1:47
+	const source = 'https://bitmovin-a.akamaihd.net/content/sintel/sintel.mpd';
+	// For more dash options, see https://github.com/Dash-Industry-Forum/dash.js
+	const dash = dashjs.MediaPlayer().create();
+	const video = document.querySelector('video');
+	dash.initialize(video, source, true);
+
+	// Update caption tracks after initializing Plyr to get the generated captions
+	// For more options see: https://github.com/sampotts/plyr/#options
+	const player = new Plyr(video, {controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'], captions: {active: false, update: false}, settings: ['captions', 'quality', 'loop']});
+ player.poster = "http://127.0.0.1:3535/sga/img/player-pic-2.png"
+	// Expose player and dash so they can be used from the console
+
+	window.player = player;
+	window.dash = dash;
+  var last_tick = fancyTimeFormat(player.currentTime);
+ var viwed_timer = 0;
+  player.on('timeupdate', event => {
+      var percent = Math.round(viwed_timer*100/(player.duration/12));
+    if( last_tick != fancyTimeFormat(player.currentTime) && percent <= 100){
+      var bar = document.getElementById('main_video_bar');
+      var value = document.getElementById('main_video_value');
+      var coin = document.getElementById('coin_flow');
+      bar.style.width = percent+"%";
+      value.innerText = percent+"%";
+      coin.style.opacity = 1;
+      if(percent > 50){
+        bar.style.background = "#ffc534";
+      }
+      if(percent > 75){
+        bar.style.background = "#ffc534";
+      }
+      if(percent >= 100){
+        value.innerText = "FLAME!";
+        bar.style.background = "#ffc534";
+        anim_video.play();
+      var coin_bar = document.getElementById('coin_bar');
+      
+      coin_bar.style.opacity = 0;
+      }
+      viwed_timer++
+      console.log(viwed_timer+"s assistidos");
+      console.log(percent+"% assistido");
+      last_tick = fancyTimeFormat(player.currentTime);
+    }
+  //console.log(fancyTimeFormat(player.currentTime));
+  //var timer_fix = Math.floor((viwed_timer++)/3.8);
+  //console.log(timer_fix)
+  });
+});
+    </script>
+
+
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
     <script
   src="https://code.jquery.com/jquery-3.6.0.slim.js"
   integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
@@ -56,8 +148,6 @@ if (localStorage.getItem('darkMode') === "on" || !localStorage.getItem('darkMode
 </script>
 <script>
 $(document).ready( function() {
-
-
     $("#novidades").on("click", function() {
         $("#content").load("novidades.html");
     });
@@ -66,6 +156,7 @@ $(document).ready( function() {
     });
 });
 </script>
+
 <script>
   
   async function getCursos() {
@@ -80,61 +171,31 @@ $(document).ready( function() {
   }
 
     async function renderCursos() {
+    let searchParams = new URLSearchParams(window.location.search);
+    let nome_curso = searchParams.get('select')
+    if(!nome_curso){ 
+window.location.href = "cursos.html";}
     let cursos = await getCursos();
     let html = '';
-    cursos.forEach(curso => {
-      let htmltags = ``;
-    for(let i=0;i < curso.Tags.length; i++){
-        htmltags+=`
-    <div class="card__category">${curso.Tags[i]}</div>`
-      }
-        let htmlSegment = `
-        <div class="game" onclick="location.href='curso.html?select=${curso.Nome}';">
-  
-  <div class="flames top">${curso.Jornada_Valor}</div>
-  <div class="game__preview" style="background-image: url(${curso.imgURL});">
-    <div class="game__types">
-    <div class="main__live presente icon_only `+ (curso.Modos.includes("Presencial") ? '' : 'grayed') +`"></div>
-    <div class="main__live live icon_only `+ (curso.Modos.includes("Online") ? '' : 'grayed') +`"></div>
-    <div class="main__live recorded icon_only `+ (curso.Modos.includes("Gravado") ? '' : 'grayed') +`"></div>
-    </div>
-    <div class="game__line">
-      <div class="game__progress" style="width: 40%;"></div>
-    </div>
-  </div>
-  <div class="game__details">
-    <div class="game__title">${curso.Nome + " - " +curso.Descrição_pequena}</div>
-    <div class="game__status">
-      <div class="status blue">${curso.Modulos.length} Fases</div>
-      <div class="status green">${(curso.Aulas*30)} min</div>
-    </div>
-    <div class="game__status category">
-   ${(htmltags)}
-                  </div>
-    <div class="game__actions"><button class="game__action"><svg class="icon icon-eye">
-          <use xlink:href="img/sprite.svg#icon-eye"></use>
-        </svg></button>
-        <button class="game__action">
-        <svg class="icon icon-like">
-      <use xlink:href="img/sprite.svg#icon-like"></use>
-    </svg></button>
-        <button class="game__action"><svg class="icon icon-play-window">
-        <use xlink:href="img/sprite.svg#icon-play-window"></use>
-      </svg></button></div>
-  </div>
-</div>
-        
-        `;
-
-        html += htmlSegment;
-    });
-
-    let container = document.querySelector('#catalogo');
-    container.innerHTML = html;
+    let curso = cursos.filter(c=> c.Nome == nome_curso);
+    console.log(curso)
+    document.querySelector('.author__man').innerHTML = curso[0].Nome;
+    document.querySelector('.curso__note').innerHTML = curso[0].Descrição+"<br><br> Indicado: "+curso[0].Publico;
+    document.querySelector('#Duração').innerHTML = curso[0].Meses+" meses";
+    document.querySelector('#Modulos').innerHTML = curso[0].Modulos.length;
+    document.querySelector('#Modos').innerHTML = curso[0].Modos;
+    document.querySelector('#Tags').innerHTML = curso[0].Tags;
+    document.querySelector('#anim_top').style.backgroundImage = "url("+curso[0].imgURL+")";
+    let modos = `
+    <div class="presente `+ (curso[0].Modos.includes("Presencial") ? '' : 'hidden') +`">Presente</div>
+    <div class="live `+ (curso[0].Modos.includes("Online") ? '' : 'hidden') +`">Live</div>
+    <div class="video `+ (curso[0].Modos.includes("Video") ? '' : 'hidden') +`">Video</div>`
+    document.querySelector('#Modos_icon').innerHTML = modos;
 }
 
 renderCursos();
 </script>
+<div hidden="" id="sprite-plyr"><!--?xml version="1.0" encoding="UTF-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="plyr-airplay" viewBox="0 0 18 18"><path d="M16 1H2a1 1 0 00-1 1v10a1 1 0 001 1h3v-2H3V3h12v8h-2v2h3a1 1 0 001-1V2a1 1 0 00-1-1z"></path><path d="M4 17h10l-5-6z"></path></symbol><symbol id="plyr-captions-off" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd" fill-opacity=".5"></path></symbol><symbol id="plyr-captions-on" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd"></path></symbol><symbol id="plyr-download" viewBox="0 0 18 18"><path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z"></path></symbol><symbol id="plyr-enter-fullscreen" viewBox="0 0 18 18"><path d="M10 3h3.6l-4 4L11 8.4l4-4V8h2V1h-7zM7 9.6l-4 4V10H1v7h7v-2H4.4l4-4z"></path></symbol><symbol id="plyr-exit-fullscreen" viewBox="0 0 18 18"><path d="M1 12h3.6l-4 4L2 17.4l4-4V17h2v-7H1zM16 .6l-4 4V1h-2v7h7V6h-3.6l4-4z"></path></symbol><symbol id="plyr-fast-forward" viewBox="0 0 18 18"><path d="M7.875 7.171L0 1v16l7.875-6.171V17L18 9 7.875 1z"></path></symbol><symbol id="plyr-logo-vimeo" viewBox="0 0 18 18"><path d="M17 5.3c-.1 1.6-1.2 3.7-3.3 6.4-2.2 2.8-4 4.2-5.5 4.2-.9 0-1.7-.9-2.4-2.6C5 10.9 4.4 6 3 6c-.1 0-.5.3-1.2.8l-.8-1c.8-.7 3.5-3.4 4.7-3.5 1.2-.1 2 .7 2.3 2.5.3 2 .8 6.1 1.8 6.1.9 0 2.5-3.4 2.6-4 .1-.9-.3-1.9-2.3-1.1.8-2.6 2.3-3.8 4.5-3.8 1.7.1 2.5 1.2 2.4 3.3z"></path></symbol><symbol id="plyr-logo-youtube" viewBox="0 0 18 18"><path d="M16.8 5.8c-.2-1.3-.8-2.2-2.2-2.4C12.4 3 9 3 9 3s-3.4 0-5.6.4C2 3.6 1.3 4.5 1.2 5.8 1 7.1 1 9 1 9s0 1.9.2 3.2c.2 1.3.8 2.2 2.2 2.4C5.6 15 9 15 9 15s3.4 0 5.6-.4c1.4-.3 2-1.1 2.2-2.4.2-1.3.2-3.2.2-3.2s0-1.9-.2-3.2zM7 12V6l5 3-5 3z"></path></symbol><symbol id="plyr-muted" viewBox="0 0 18 18"><path d="M12.4 12.5l2.1-2.1 2.1 2.1 1.4-1.4L15.9 9 18 6.9l-1.4-1.4-2.1 2.1-2.1-2.1L11 6.9 13.1 9 11 11.1zM3.786 6.008H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol><symbol id="plyr-pause" viewBox="0 0 18 18"><path d="M6 1H3c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1zm6 0c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1h-3z"></path></symbol><symbol id="plyr-pip" viewBox="0 0 18 18"><path d="M13.293 3.293L7.022 9.564l1.414 1.414 6.271-6.271L17 7V1h-6z"></path><path d="M13 15H3V5h5V3H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1v-6h-2v5z"></path></symbol><symbol id="plyr-play" viewBox="0 0 18 18"><path d="M15.562 8.1L3.87.225c-.818-.562-1.87 0-1.87.9v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></symbol><symbol id="plyr-restart" viewBox="0 0 18 18"><path d="M9.7 1.2l.7 6.4 2.1-2.1c1.9 1.9 1.9 5.1 0 7-.9 1-2.2 1.5-3.5 1.5-1.3 0-2.6-.5-3.5-1.5-1.9-1.9-1.9-5.1 0-7 .6-.6 1.4-1.1 2.3-1.3l-.6-1.9C6 2.6 4.9 3.2 4 4.1 1.3 6.8 1.3 11.2 4 14c1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2 2.7-2.7 2.7-7.1 0-9.9L16 1.9l-6.3-.7z"></path></symbol><symbol id="plyr-rewind" viewBox="0 0 18 18"><path d="M10.125 1L0 9l10.125 8v-6.171L18 17V1l-7.875 6.171z"></path></symbol><symbol id="plyr-settings" viewBox="0 0 18 18"><path d="M16.135 7.784a2 2 0 01-1.23-2.969c.322-.536.225-.998-.094-1.316l-.31-.31c-.318-.318-.78-.415-1.316-.094a2 2 0 01-2.969-1.23C10.065 1.258 9.669 1 9.219 1h-.438c-.45 0-.845.258-.997.865a2 2 0 01-2.969 1.23c-.536-.322-.999-.225-1.317.093l-.31.31c-.318.318-.415.781-.093 1.317a2 2 0 01-1.23 2.969C1.26 7.935 1 8.33 1 8.781v.438c0 .45.258.845.865.997a2 2 0 011.23 2.969c-.322.536-.225.998.094 1.316l.31.31c.319.319.782.415 1.316.094a2 2 0 012.969 1.23c.151.607.547.865.997.865h.438c.45 0 .845-.258.997-.865a2 2 0 012.969-1.23c.535.321.997.225 1.316-.094l.31-.31c.318-.318.415-.781.094-1.316a2 2 0 011.23-2.969c.607-.151.865-.547.865-.997v-.438c0-.451-.26-.846-.865-.997zM9 12a3 3 0 110-6 3 3 0 010 6z"></path></symbol><symbol id="plyr-volume" viewBox="0 0 18 18"><path d="M15.6 3.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4C15.4 5.9 16 7.4 16 9c0 1.6-.6 3.1-1.8 4.3-.4.4-.4 1 0 1.4.2.2.5.3.7.3.3 0 .5-.1.7-.3C17.1 13.2 18 11.2 18 9s-.9-4.2-2.4-5.7z"></path><path d="M11.282 5.282a.909.909 0 000 1.316c.735.735.995 1.458.995 2.402 0 .936-.425 1.917-.995 2.487a.909.909 0 000 1.316c.145.145.636.262 1.018.156a.725.725 0 00.298-.156C13.773 11.733 14.13 10.16 14.13 9c0-.17-.002-.34-.011-.51-.053-.992-.319-2.005-1.522-3.208a.909.909 0 00-1.316 0zm-7.496.726H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol></svg></div>
     <div class="page">
       <div class="sidebar">
         <div class="sidebar__top"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_black" src="./img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_white" src="./img/logo-white.svg" alt="" /></a><button class="sidebar__burger"></button><button class="sidebar__close"><svg class="icon icon-close">
@@ -415,257 +476,210 @@ renderCursos();
           </div>
         </div>
         <div id="content">
-        
-        
+          <div class="main main_channel js-main">
+    <div class="main__container">
+        <div class="main__for js-slider js-main-for slick-initialized slick-slider">
+            <div class="slick-list">
+                <div class="slick-track" style="opacity: 1; width: 100vw;">
+                    <div class="main__slide slick-slide slick-current slick-active" data-slick-index="0"
+                        aria-hidden="false"
+                        style="width: 100vw;; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+                        tabindex="0">
+                        <div class="main__item" id="anim_top" style="background-image: url(img/curso-start.jpg);">
 
-          <div class="page__slider">
-          <div class="page__info h5">SAGA</div>
-          <div class="page__title h2">Novidades</div>
-          <div class="main main_trending js-main">
-            <div class="main__body">
-              <div class="main__slider js-slider js-main-slider">
-                <!-- repeat -->
-                <div class="main__slide">
-                  <div class="main__item" style="background-image: url(img/warmup-lol.jpg);">
-                      <div class="midia__banner">
-                      <div class="main__live recorded icon_only"></div>
-                      <div class="main__live live icon_only grayed"></div>
-                      <div class="main__live presente icon_only grayed"></div>
-                      </div>
-                    <div class="main__details">
-                      <div class="card__title h6">Curso!</div>
-                      <div class="main__title h4">League of Legends WARMUP!</div>
-                      <div class="main__parameters">
-                        <div class="main__parameter">
-                          <div class="main__text">Aprenda com os melhores sobre como ownar no lolzinho.</div>
                         </div>
-                      </div>
-                      <a class="main__btn btn btn_blue btn_wide" href="start.html">Saber Mais</a>
-                      </div>
-                  </div>
+                    </div>
                 </div>
-                <!-- out repeat -->
-                <!-- repeat -->
-                <div class="main__slide">
-                  <div class="main__item" style="background-image: url(https://i.pinimg.com/originals/a9/25/c2/a925c2b6b1be05b9776384bc29809e7d.png);">
-                      <div class="midia__banner">
-                      <div class="main__live presente icon_only"></div>
-                      <div class="main__live live icon_only"></div>
-                      <div class="main__live recorded icon_only grayed"></div>
-                      </div>
-                    <div class="main__details">
-                      <div class="card__title h6">Novas Turmas!</div>
-                      <div class="main__title h4">SAGA STREAMER+!</div>
-                      <div class="main__parameters">
-                        <div class="main__parameter">
-                          <div class="main__text">Já pensou em ser um streamer e montar uma comunidade f*da?! Vem que.</div>
-                        </div>
-                      </div>
-                      <a class="main__btn btn btn_blue btn_wide" href="start.html">Saber Mais</a>
-                      </div>
-                  </div>
-                </div>
-                <!-- out repeat -->
-                <!-- repeat -->
-                <div class="main__slide">
-                  <div class="main__item" style="background-image: url(img/curso-start.jpg);">
-                      <div class="midia__banner">
-                      <div class="main__live presente icon_only"></div>
-                      <div class="main__live live icon_only grayed"></div>
-                      <div class="main__live recorded icon_only grayed"></div>
-                      </div>
-                    <div class="main__details">
-                      <div class="card__title h6">Completão!</div>
-                      <div class="main__title h4">START <i>5.0</i>!</div>
-                     <div class="card__discount">30% de desconto</div>
-                      
-                      <div class="main__parameters">
-                        <div class="main__parameter">
-                          <div class="main__text">Um curso completo para artistas digitais e designers.</div>
-                        </div>
-                      </div>
-                      <a class="main__btn btn btn_blue btn_wide" href="start.html">Saber Mais</a>
-                      </div>
-                  </div>
-                </div>
-                <!-- out repeat -->
-              </div>
             </div>
-            <div class="main__foot">
-              <div class="main__counter js-main-counter"></div>
-              <div class="main__indicator">Monstrando <span class="main__status js-main-status"></span></div>
-            </div>
-          </div>
+
         </div>
 
-          
-<div class="page__center">
-  
-  <div class="catalog">
-            <div class="catalog__row">
-              <div class="catalog__container">
-                <div class="catalog__sorting">
-                  
-          <div class="h5">TRILHAS SAGA</div>
-                  <div class="catalog__box">
-                    <div class="catalog__actions"><a class="catalog__action" href="#"><svg class="icon icon-box">
-                          <use xlink:href="./img/sprite.svg#icon-document"></use>
-                        </svg>Historico Flames</a><a class="catalog__action" href="#"><svg class="icon icon-box">
-                          <use xlink:href="img/sprite.svg#icon-box"></use>
-                        </svg>Minhas trilhas</a></div>
-                    <div class="catalog__view"><a class="catalog__link" href="#"><svg class="icon icon-view-list">
-                          <use xlink:href="img/sprite.svg#icon-view-list"></use>
-                        </svg></a><a class="catalog__link active" href="#"><svg class="icon icon-view-cell">
-                          <use xlink:href="img/sprite.svg#icon-view-cell"></use>
-                        </svg></a></div>
-                  </div>
-                </div>
-                <div id="catalogo" class="catalog__list">
-                  <!-- begin -->
-                  <div class="game">
-  
-                    <div class="flames top">25</div>
-                    <div class="game__preview" style="background-image: url(./img/curso-start.jpg);">
-                      <div class="game__types">
-                      <div class="main__live presente icon_only"></div>
-                      <div class="main__live live icon_only"></div>
-                      <div class="main__live recorded icon_only"></div>
-                      </div>
-                      <div class="game__line">
-                        <div class="game__progress" style="width: 40%;"></div>
-                      </div>
-                    </div>
-                    <div class="game__details">
-                      <div class="game__title">Trilha START! - Artista Completo</div>
-                      <div class="game__status">
-                        <div class="status blue">3 Fases</div>
-                        <div class="status green">30 min</div>
-                      </div>
-                      <div class="game__status category">
-                      <div class="card__category">Arte</div>
-                                    <div class="card__category">Design</div>
-                                    <div class="card__category">Video</div>
-                                    </div>
-                   
-                      
-                      <div class="game__actions"><button class="game__action"><svg class="icon icon-eye">
-                            <use xlink:href="img/sprite.svg#icon-eye"></use>
-                          </svg></button>
-                          <button class="game__action">
-                          <svg class="icon icon-like">
-                        <use xlink:href="img/sprite.svg#icon-like"></use>
-                      </svg></button>
-                          <button class="game__action"><svg class="icon icon-play-window">
-                          <use xlink:href="img/sprite.svg#icon-play-window"></use>
-                        </svg></button></div>
-                    </div>
-                  </div>
-                  
-                  <!-- end -->
+    </div>
+</div>
+<div class="page__center page__center_pt0">
+    <div class="author author_big">
+        <div class="author__container">
+            <div class="author__details">
 
-                  <!-- begin -->
-                  <div class="game">
-  
-                    <div class="flames top">25</div>
-                    <div class="game__preview" style="background-image: url(./img/warmup-lol.jpg);">
-                      <div class="game__types">
-                      <div class="main__live presente icon_only"></div>
-                      <div class="main__live live icon_only"></div>
-                      <div class="main__live recorded icon_only grayed"></div>
-                      </div>
-                      <div class="game__line">
-                        <div class="game__progress" style="width: 100%;"></div>
-                      </div>
+                <div class="author__wrap">
+                    <div class="page__info h6">Curso</div>
+                    <div class="author__man h2">START <i>5.0</i></div>
+                    <div id="Modos_icon" class="author__parameters" style="margin-top: 20px;">
+                       
                     </div>
-                    <div class="game__details">
-                      <div class="game__title"> Trilha PLAYGAME! Concept > Gameplay</div>
-                      <div class="game__status">
-                        <div class="status blue">3 Fases</div>
-                        <div class="status green">30 min</div>
-                      </div>
-                      <div class="game__status category">
-                      <div class="card__category">Design</div>
-                      <div class="card__category">Arte</div>
-                                    <div class="card__category">Code</div>
-                                    <div class="card__category">Game</div>
-                                    </div>
-                   
-                      
-                      <div class="game__actions"><button class="game__action"><svg class="icon icon-eye">
-                            <use xlink:href="img/sprite.svg#icon-eye"></use>
-                          </svg></button>
-                          <button class="game__action">
-                          <svg class="icon icon-like">
-                        <use xlink:href="img/sprite.svg#icon-like"></use>
-                      </svg></button>
-                          <button class="game__action"><svg class="icon icon-play-window">
-                          <use xlink:href="img/sprite.svg#icon-play-window"></use>
-                        </svg></button></div>
-                    </div>
-                  </div>
-                  
-                  <!-- end -->
-
-                  <!-- begin -->
-                  <div class="game">
-  
-                    <div class="flames top">25</div>
-                    <div class="game__preview" style="background-image: url(https://i.pinimg.com/originals/a9/25/c2/a925c2b6b1be05b9776384bc29809e7d.png);">
-                      <div class="game__types">
-                      <div class="main__live presente icon_only"></div>
-                      <div class="main__live live icon_only"></div>
-                      <div class="main__live recorded icon_only grayed"></div>
-                      </div>
-                      <div class="game__line">
-                        <div class="game__progress" style="width: 100%;"></div>
-                      </div>
-                    </div>
-                    <div class="game__details">
-                      <div class="game__title">STREMAER+ @ Conteúdo interativo!</div>
-                      <div class="game__status">
-                        <div class="status blue">3 Fases</div>
-                        <div class="status green">30 min</div>
-                      </div>
-                      <div class="game__status category">
-                      <div class="card__category">Design</div>
-                      <div class="card__category">Arte</div>
-                                    <div class="card__category">Code</div>
-                                    <div class="card__category">Game</div>
-                                    </div>
-                   
-                      
-                      <div class="game__actions"><button class="game__action"><svg class="icon icon-eye">
-                            <use xlink:href="img/sprite.svg#icon-eye"></use>
-                          </svg></button>
-                          <button class="game__action">
-                          <svg class="icon icon-like">
-                        <use xlink:href="img/sprite.svg#icon-like"></use>
-                      </svg></button>
-                          <button class="game__action"><svg class="icon icon-play-window">
-                          <use xlink:href="img/sprite.svg#icon-play-window"></use>
-                        </svg></button></div>
-                    </div>
-                  </div>
-                  
-                  <!-- end -->
-                  
-               
-                  <!- end listing -->
                 </div>
-                <div class="catalog__btns"><button class="catalog__btn btn btn_gray">Load More</button></div>
-              </div>
+            </div>
+            <div class="author__btns" style="justify-content: center;">
+                <button style="width: 100%;min-width: 166px;"class="author__btn btn btn_purple">Assinar</button>
             
             </div>
-          </div>
-
-  
-  
-        
-        
-        
-        
-        
         </div>
+    </div>        <div class="catalog__nav"><a class="catalog__link active" href="#">Sobre</a><a class="catalog__link"
+        href="#">Módulos</a><a class="catalog__link"
+        href="#">Horários</a></div>
+
+    <div class="author author_full">
+        <div class="author__row">
+          <div class="author__col">
+            <div class="author__details">
+              <div class="author__wrap">
+                <div class="author__flex">
+                  <div class="author__box">
+                    <div class="curso__note">
+                        Artes Digitais, Design, Audiovisual, 3D e Interatividade.
+                        Tudo em uma única jornada. O curso Start 5.0 SAGA é um treinamento completo e generalista que leva você ao estudo prático dos softwares mais utilizados do mercado, com o objetivo de evoluir as suas habilidades para a construção de um portfólio e direcionar para uma carreira na área desejada. Aprenda ilustração vetorial, pintura digital, composição de imagens, efeitos visuais, edição e motion graphics para vídeos, além de criar projetos interativos em 3D para realidades virtual e aumentada.</div>
+                  </div>
+                
+                </div>
+                <div class="games"></div>
+              </div>
+            </div>
+          </div>
+          <div class="author__col">
+            <div class="author__group">
+              <div class="author__line">
+                <div class="author__category">Duração</div>
+                <div id="Duração" class="author__value">24 meses</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Módulos</div>
+                <div  id="Modulos" class="author__value">12</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Mídia</div>
+                <div id="Modos" class="author__value">Presencial / Live</div>
+              </div>
+              <div class="author__line">
+                <div class="author__category">Competencia</div>
+                <div id="Tags" class="author__value">Arte / Design / Editorial</div>
+              </div>
+            </div></div>
+        </div>
+      </div>
+
+      <div class="games">
+        <div class="games__head">
+          <div class="games__title h5">Módulos do curso</div>
+          
+        </div>
+        <div class="games__list"><a onclick="$('#popup_inner').load('modulos/arte_vetorial.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Arte-Vetorial.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Arte Vetorial</div>
+              <div class="status orange">Adobe Illustrator</div>
+            </div>
+          </a><a onclick="$('#popup_inner').load('modulos/composicao_de_imagem.html');"id="m_arte_vetorial" class="games__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-composicao-de-imagens.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Composição de imagem</div>
+              <div class="status blue">Adobe Photoshop</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-pintura-digital.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Pintura Digital</div>
+              <div class="status blue">Adobe Photoshop</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Efeitos-Visuais-e-Motion-Graphics.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Motion Graphics</div>
+              <div class="status blue">Adobe After Effects</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Edicao-Audiovisual.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Edição Audiovisual</div>
+              <div class="status green">Adobe Premiere</div>
+              <div class="status blue">Adobe Audition</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Cenarios-3D.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DI - Cenários 3D</div>
+              <div class="status green">Autodesk Maya</div>
+            </div>
+          </a> 
+           <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Criacao-de-Personagens-3D.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DII - Personagens 3D</div>
+              <div class="status green">Autodesk Maya</div>
+              <div class="status orange">ZBRUSH</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Animacao-3d.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">3DIII - Animação 3D</div>
+              <div class="status green">Autodesk Maya</div>
+              <div class="status orange">ZBRUSH</div>
+            </div>
+          </a>
+          <a class="games__item" href="#">
+            <div class="games__preview"><img class="games__pic" src="img/modulos/curso-Tecnologias-Imersivas.jpg"></div>
+            <div class="games__details">
+              <div class="games__title">Metaverso Imersivo</div>
+              <div class="status green">Spark AR Studio</div>
+              <div class="status orange">Unreal Engine</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+    <div class="details__list">
+        <div class="details__item">
+          <div class="details__head">
+            <div class="details__preview bg-purple"><img class="details__pic" src="img/folder.svg" alt=""></div>
+            <div class="details__text caption-sm">Visualizações</div>
+          </div>
+          <div class="details__counter h3">1.5m</div>
+          <div class="details__indicator">
+            <div class="details__progress bg-purple" style="width: 55%;"></div>
+          </div>
+        </div>
+        <div class="details__item">
+          <div class="details__head">
+            <div class="details__preview bg-pink"><img class="details__pic" src="img/activity.svg" alt=""></div>
+            <div class="details__text caption-sm">Alunos</div>
+          </div>
+          <div class="details__counter h3">1m</div>
+          <div class="details__indicator">
+            <div class="details__progress bg-pink" style="width: 52%;"></div>
+          </div>
+        </div>
+        <div class="details__item">
+          <div class="details__head">
+            <div class="details__preview bg-blue"><img class="details__pic" src="img/bag.svg" alt=""></div>
+            <div class="details__text caption-sm">Exercícios</div>
+          </div>
+          <div class="details__counter h3">529k</div>
+          <div class="details__indicator">
+            <div class="details__progress bg-blue" style="width: 55%;"></div>
+          </div>
+        </div>
+        <div class="details__item">
+          <div class="details__head">
+            <div class="details__preview bg-orange"><img class="details__pic" src="img/chat.svg" alt=""></div>
+            <div class="details__text caption-sm">Certificados</div>
+          </div>
+          <div class="details__counter h3">478k</div>
+          <div class="details__indicator">
+            <div class="details__progress bg-orange" style="width: 68%;"></div>
+          </div>
+        </div>
+      </div>
+    
+</div>
+          
+          
+          </div>
       </div>
     </div>
     <div class="popup popup_settings mfp-hide" id="popup-settings">
@@ -870,5 +884,37 @@ renderCursos();
     <script src="./js/lib/jquery.nice-select.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    
+    <script>
+      let animContainer = document.getElementById("coin_flow");
+let anim = null;
+
+anim = lottie.loadAnimation({
+  container: animContainer,
+  name: "lottie-web-test",
+  assetsPath: "https://neudesign.ru/coin/img_0.png",
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "https://assets3.lottiefiles.com/packages/lf20_6q3x8d8e.json"
+});
+var anim_video = lottie.loadAnimation({
+  container: document.getElementById("overlay_anim"),
+  name: "lottie-video",
+  assetsPath: "https://neudesign.ru/coin/img_0.png",
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "https://assets5.lottiefiles.com/temp/lf20_zBfmHv.json",
+});
+//https://assets9.lottiefiles.com/temp/lf20_aUMhY3.json
+//https://assets5.lottiefiles.com/private_files/lf30_brfwfvq7.json
+
+
+</script>
   </body>
 </html>

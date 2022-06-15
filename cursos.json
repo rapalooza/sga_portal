@@ -1,0 +1,20 @@
+[{
+        "Nome": "Start",
+        "Descrição_pequena": "Curso compleo para artistas e designers.",
+        "Descrição": "Tudo em uma única jornada. O curso Start 5.0 SAGA é um treinamento completo e generalista que leva você ao estudo prático dos softwares mais utilizados do mercado, com o objetivo de evoluir as suas habilidades para a construção de um portfólio e direcionar para uma carreira na área desejada. Aprenda ilustração vetorial, pintura digital, composição de imagens, efeitos visuais, edição e motion graphics para vídeos, além de criar projetos interativos em 3D para realidades virtual e aumentada.",
+        "Valor_matricula": 400,
+        "Valor_reais": 400,
+        "imgURL": "img/curso-start.jpg",
+        "Modulos": ["Arte Vetorial","Composição de Imagem","Pintura Digital","Motion Graphics","Edição AudioVisual","3DI - Cenários3D","3DII - Personagen3D","3DIII - Animação3D","Metaverso Imersivo9"],
+        "Softwares": ["Adobe Photoshop", "Adobe Illustrator","Adobe After Effects","Adobe Premiere","Adobe Audition","Blender","Substance Painter","Zbrush","Spark AR Studio","Unreal Engine"],
+        "Publico": "Iniciantes, estudantes e interessados em artes digitais, design, 3D, criação e edição de vídeos, realidade virtual, aumentada.", 
+        "Aulas": 20,
+        "Meses": 24,
+        "Modos": ["Online","Presencial"],
+        "Tags": ["Games","Arte","Desing","Video"],
+        "Freemium": true,
+        "Jornada_Tamanho": 3,
+        "Jornada_Valor": 35,
+        "Jornada_Premio": 20
+    }
+]

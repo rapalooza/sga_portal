@@ -10736,7 +10736,9 @@ body.dark .login__close:hover .icon {
   flex-shrink: 0;
   width: 80px;
 }
-
+.hidden {
+  display:none;
+}
 .show {
   opacity: 1 !important;
   transition: all .5s;
